@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Project 3 of Practicum's Software Engineer course.">
+        <meta name="author" content="Kelisha Pitts">
+        <meta name="keywords" content="images, gallery, responsive, moblie, image gallery, photos, Practicum, project 3">
+        <title>Around the US</title>
+        <link rel="stylesheet" href="./vendor/normalize.css"/>
+        <link rel="stylesheet" href="./pages/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+      </head> 
+      
+<body class="page">
+<div class="page__content">    
+<header class="header">
+<img class="header__logo" src="./images/Logo-white.svg" alt="logo">
+<span class="header__footer"></span>
+</header>
+
+<main class="content">
+<section class="profile">
+        <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="profile-avatar">
+        <div class=" profile__heading">
+        <h1 class="profile__title">Jacques Cousteau</h1>
+        <input class="profile__button--edit" type="image" id="image" src="./images/pencil.svg" alt="pencil_edit-button">
+        </div>
+        <input  class="profile__button--add"type="image" id="image"  src="./images/add-button.svg" alt="plus_add-button"> 
+        <h2 class="profile__subtitle">Explorer</h2>
+</section>
+
+<section class="gallery">
+<ul class="gallery__cards">   
+<li class="card">    
+<img class="card__image" src="./images/yosemite.jpg" alt="yosemite-valley_image">
+<div class="card__description">
+<h3 class="card__title">Yosemite Valley</h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>
+</li>
+<li class="card">
+<img class="card__image" src="./images/lake-louise.jpg" alt="lake-louise_image">
+<div class="card__description">
+<h3 class="card__title">Lake Louise</h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>
+</li>
+<li class="card">
+<img class="card__image" src="./images/bald-mountains.jpg" alt="bald-mountains_image">
+<div class="card__description">
+<h3 class="card__title">Bald Mountains</h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>
+</li>
+<li class="card">
+<img class="card__image" src="./images/latemar.jpg" alt="latemar-mountian_image">
+<div class="card__description">
+<h3 class="card__title">Latemar</h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>      
+</li>
+<li class="card">
+<img class="card__image" src="./images/vanoise.jpg" alt="vanoise_image">
+<div class="card__description">
+<h3 class="card__title">Vanoise National Park</h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>
+</li>
+<li class="card"> 
+<img class="card__image" src="./images/lago.jpg" alt="lago_image">
+<div class="card__description">
+<h3 class="card__title">Lago di Braies </h3>
+<input class="card__button--like" type="image" id="image" alt="like-button"
+       src="./images/heart-vector.svg">
+</div>
+</li>
+</ul>
+</section>
+</main>
+</div>
+</body>
+<footer class="footer">
+<p>&copy; 2022 Around The U.S.</p>
+</footer>
+</html>

@@ -1,0 +1,46 @@
+.header{
+    margin: 45px 200px 0px 200px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header__logo{
+    width: 173px;
+    height: 33px;
+    margin: 0px 0px 41px 0px;
+}
+.header__footer{
+    border-bottom: 1px solid #545454;
+    flex-grow: 2;
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+    .header{
+        justify-content: flex-start;
+        margin: 27px 27px 0px 27px;
+     
+    }
+
+    .header__logo{
+        width: 173px;
+        height: 33px;
+        margin: 0px 0px 41px 0px;
+}
+}
+
+
+@media screen and  (min-width: 320px) and (max-width: 768px){ 
+    .header{
+        justify-content: flex-start;
+        margin: 27px 0px 0px;
+     
+    }
+
+    .header__logo{
+        width: 173px;
+        height: 33px;
+        margin: 0px 0px 41px 27px;
+}
+}

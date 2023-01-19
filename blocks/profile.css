@@ -96,7 +96,7 @@
 
 }
 
-.profile__button--edit {
+.profile__button-edit {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0px auto 0px 18px;
@@ -109,13 +109,13 @@
     transition: opacity 1s ease;
 }
 
-.profile__button--edit:hover {
+.profile__button-edit:hover {
     opacity: 0.5;
 
 }
 
 
-.profile__button--add {
+.profile__button-add {
     width: 150px;
     height: 50px;
     background-color: black;
@@ -130,7 +130,7 @@
 
 }
 
-.profile__button--add:hover {
+.profile__button-add:hover {
     opacity: 0.5;
 
 }
@@ -178,7 +178,7 @@
 
     }
 
-    .profile__button--edit {
+    .profile__button-edit {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 18px;
@@ -187,7 +187,7 @@
 
     }
 
-    .profile__button--add {
+    .profile__button-add {
         justify-items: center;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -265,14 +265,14 @@
 
     }
 
-    .profile__button--edit {
+    .profile__button-edit {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding: 5px;
 
     }
 
-    .profile__button--add {
+    .profile__button-add {
         justify-items: center;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -354,7 +354,7 @@
 
     }
 
-    .profile__button--edit {
+    .profile__button-edit {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 18px;
@@ -365,7 +365,7 @@
 
     }
 
-    .profile__button--add {
+    .profile__button-add {
         width: 90%;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;

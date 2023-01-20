@@ -5,4 +5,5 @@
 @import url(../blocks/gallery.css);
 @import url(../blocks/header.css);
 @import url(../blocks/profile.css);
-@import url(../vendor/fonts/font.css);
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/Inter_Web/inter.css);

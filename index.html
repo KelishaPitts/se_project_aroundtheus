@@ -9,16 +9,14 @@
        <meta name="keywords" content="images, gallery, responsive, moblie, image gallery, photos, Practicum, project 3">
        <title>Around the US</title>
        <link rel="icon" href="./favicon.ico">
-       <link rel="stylesheet" href="./vendor/normalize.css">
        <link rel="stylesheet" href="./pages/index.css">
-       <link rel="stylesheet" href="./vendor/fonts/Inter_Web/inter.css">
+       
 </head>
 
 <body class="page">
        <div class="page__content">
               <header class="header">
                      <img class="header__logo" src="./images/Logo-white.svg" alt="logo">
-                     <span class="header__footer"></span>
               </header>
 
               <main class="content">
@@ -26,12 +24,10 @@
                             <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="profile-avatar">
                             <div class=" profile__heading">
                                    <h1 class="profile__title">Jacques Cousteau</h1>
-                                   <input class="profile__button-edit" type="image" id="edit-button"
-                                          src="./images/pencil.svg" alt="pencil_edit-button">
+                                   <button class="profile__button-edit" type="button" value="edit-button" aria-label="edit-button"></button>
                             </div>
-                            <input class="profile__button-add" type="image" id="add-button"
-                                   src="./images/add-button.svg" alt="plus_add-button">
-                            <h2 class="profile__subtitle">Explorer</h2>
+                            <button class="profile__button-add" type="button" value="add-button" aria-label="add-button"></button>
+                            <p class="profile__subtitle">Explorer</p>
                      </section>
 
                      <section class="gallery">
@@ -40,52 +36,46 @@
                                           <img class="card__image" src="./images/yosemite.jpg"
                                                  alt="yosemite-valley_image">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Yosemite Valley</h3>
-                                                 <input class="card__button-like" type="image" id="Yosemite-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Yosemite Valley</h2>
+                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
                                           </div>
                                    </li>
                                    <li class="card">
                                           <img class="card__image" src="./images/lake-louise.jpg"
                                                  alt="lake-louise_image">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Lake Louise</h3>
-                                                 <input class="card__button-like" type="image" id="Louise-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Lake Louise</h2>
+                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
                                           </div>
                                    </li>
                                    <li class="card">
                                           <img class="card__image" src="./images/bald-mountains.jpg"
                                                  alt="bald-mountains_image">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Bald Mountains</h3>
-                                                 <input class="card__button-like" type="image" id="Bald-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Bald Mountains</h2>
+                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
                                           </div>
                                    </li>
                                    <li class="card">
                                           <img class="card__image" src="./images/latemar.jpg"
                                                  alt="latemar-mountian_image">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Latemar</h3>
-                                                 <input class="card__button-like" type="image" id="Latemar-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Latemar</h2>
+                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
                                           </div>
                                    </li>
                                    <li class="card">
-                                          <img class="card__image" src="./images/vanoise.jpg" alt="vanoise_image">
+                                          <img class="card__image" src="./images/vanoise.jpg" alt="vanoise_image" aria-label="like-button">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Vanoise National Park</h3>
-                                                 <input class="card__button-like" type="image" id="vanoise-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Vanoise National Park</h2>
+                                                 <button class="card__button-like" type="button" value="like-button"  aria-label="like-button"></button>
                                           </div>
                                    </li>
                                    <li class="card">
                                           <img class="card__image" src="./images/lago.jpg" alt="lago_image">
                                           <div class="card__description">
-                                                 <h3 class="card__title">Lago di Braies </h3>
-                                                 <input class="card__button-like" type="image" id="lago-like"
-                                                        alt="like-button" src="./images/heart-vector.svg">
+                                                 <h2 class="card__title">Lago di Braies </h2>
+                                                 <button class="card__button-like" type="button" value="like-button"  aria-label="like-button"></button>
                                           </div>
                                    </li>
                             </ul>
@@ -94,7 +84,7 @@
 
 
               <footer class="footer">
-                     <p>&copy; 2022 Around The U.S.</p>
+                     <p class="footer_copywrite">&copy; 2022 Around The U.S.</p>
               </footer>
        </div>
 </body>

@@ -64,8 +64,8 @@
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;
-    width: 168.75px;
-    height: 168.75px;
+    width: 127.5px;
+    height: 127.5px;
     border-radius: 50%;
     padding: 18px;
 }
@@ -79,6 +79,10 @@
     color: #FFFFFF;
     margin: 0px 0px 16px 0px;
     padding: 0px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
 }
 
@@ -93,6 +97,10 @@
     -ms-flex-item-align: start;
     -ms-grid-row-align: start;
     align-self: start;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
 }
 
@@ -103,14 +111,17 @@
     width: 24px;
     height: 24px;
     border: 1px solid #FFFFFF;
-    padding: 7px;
+    padding: 0px;
     -webkit-transition: opacity 1s ease;
     -o-transition: opacity 1s ease;
     transition: opacity 1s ease;
+    background: url(../images/pencil.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .profile__button-edit:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 
 }
 
@@ -118,32 +129,31 @@
 .profile__button-add {
     width: 150px;
     height: 50px;
-    background-color: black;
+    background-color:transparent;
     border-radius: 2px;
     border: 2px solid #FFFFFF;
-    padding: 14px 64px 14px 64px;
+    padding: 0px;
     -webkit-transition: opacity 1s ease;
     -o-transition: opacity 1s ease;
     transition: opacity 1s ease;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    background: url(../images/add-button.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
 .profile__button-add:hover {
-    opacity: 0.5;
+    opacity: 0.6;
 
 }
 
 @media screen and (min-width: 857px) and (max-width: 1279px) {
     .profile {
         margin: 36px 27px 0px 27px;
-        display: -ms-grid;
-        display: grid;
         -ms-grid-rows: -webkit-min-content;
         -ms-grid-rows: min-content;
-        grid-template-rows: -webkit-min-content;
-        grid-template-rows: min-content;
     }
 
     .profile__image {
@@ -170,7 +180,6 @@
     }
 
     .profile__subtitle {
-        font-size: 1rem;
         padding: 0px 0px 36px 0px;
         width: -webkit-min-content;
         width: -moz-min-content;
@@ -181,9 +190,8 @@
     .profile__button-edit {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        width: 18px;
-        height: 18px;
-        padding: 5px;
+       
+       
 
     }
 
@@ -198,8 +206,6 @@
 @media screen and (min-width: 769px) and (max-width: 856px) {
     .profile {
         margin: 36px 27px 0px 27px;
-        display: -ms-grid;
-        display: grid;
         -ms-grid-columns: -webkit-min-content 1fr -webkit-min-content;
         -ms-grid-columns: min-content 1fr min-content;
         grid-template-columns: -webkit-min-content 1fr -webkit-min-content;
@@ -268,7 +274,6 @@
     .profile__button-edit {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        padding: 5px;
 
     }
 
@@ -292,7 +297,7 @@
         grid-template-rows: -webkit-min-content -webkit-min-content;
         grid-template-rows: min-content min-content;
         justify-items: center;
-        margin: auto;
+        margin: 38.25px auto 36px auto;
 
 
 
@@ -355,11 +360,8 @@
     }
 
     .profile__button-edit {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 18px;
-        height: 18px;
-        padding: 5px;
+        width: 1.4rem;
+        height: 1.4rem;
 
 
 
@@ -367,8 +369,6 @@
 
     .profile__button-add {
         width: 90%;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
         -ms-grid-row: 5;
         -ms-grid-row-span: 1;
         grid-row: 5/6;

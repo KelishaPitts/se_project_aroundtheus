@@ -9,7 +9,6 @@
     background-color: #FFFFFF;
     color: #000000;
     width: 282px;
-    height: 361px;
     border-radius: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -51,18 +50,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    margin: 25px auto 0px 25px;
+    margin: 25px auto 25px 25px;
 }
 
-.card__button--like {
+.card__button-like {
     width: 21px;
     height: 18px;
-    margin: 30px 25px 0px 0px;
+    margin: 30px 25px 25px 0px;
     -webkit-transition: opacity 1s ease;
     -o-transition: opacity 1s ease;
     transition: opacity 1s ease;
+    background: url(../images/heart-vector.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
 }
 
-.card__button--like:hover {
+.card__button-like:hover {
     opacity: 0.5;
 }

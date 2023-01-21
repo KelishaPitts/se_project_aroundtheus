@@ -63,6 +63,7 @@
     background: url(../images/heart-vector.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
     border: none;
 }
 

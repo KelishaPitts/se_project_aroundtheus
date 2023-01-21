@@ -15,9 +15,6 @@
     -ms-flex-direction: column;
     flex-direction: column;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
-    -webkit-box-flex: 2;
-    -ms-flex-positive: 2;
-    flex-grow: 2;
 
 }
 

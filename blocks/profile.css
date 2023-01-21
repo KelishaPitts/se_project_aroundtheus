@@ -185,13 +185,7 @@
 @media screen and (min-width: 768px) and (max-width: 856px) {
     .profile {
         margin: 36px 27px 0px 27px;
-        -ms-grid-columns: -webkit-min-content 1fr -webkit-min-content;
-        -ms-grid-columns: min-content 1fr min-content;
-        grid-template-columns: -webkit-min-content 1fr -webkit-min-content;
         grid-template-columns: min-content 1fr min-content;
-        -ms-grid-rows: -webkit-min-content;
-        -ms-grid-rows: min-content;
-        grid-template-rows: -webkit-min-content;
         grid-template-rows: min-content;
 
 

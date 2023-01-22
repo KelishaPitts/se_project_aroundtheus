@@ -10,46 +10,20 @@
 }
 
 .gallery__cards {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: -webkit-min-content 20px -webkit-min-content 20px -webkit-min-content;
-    -ms-grid-columns: min-content 20px min-content 20px min-content;
-    grid-template-columns: repeat(3, -webkit-min-content);
     grid-template-columns: repeat(3, min-content);
-    -ms-grid-rows: 1fr 17px 1fr;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 17px;
     grid-column-gap: 20px;
     margin: 0px;
     padding: 0px;
-
-
 }
-
-@media screen and (min-width: 1280px) and (max-width: 1600px) {
-    .gallery__cards {
-        grid-template-columns: -webkit-min-content -webkit-min-content -webkit-min-content;
-        grid-template-columns: min-content min-content min-content;
-    }
-}
-
 
 @media screen and (min-width: 769px) and (max-width: 1279px) {
     .gallery__cards {
-        -ms-grid-columns: -webkit-min-content 20px -webkit-min-content;
-        -ms-grid-columns: min-content 20px min-content;
-        grid-template-columns: -webkit-min-content -webkit-min-content;
         grid-template-columns: min-content min-content;
-        -ms-grid-rows: 1fr 17px 1fr 17px 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-row-gap: 17px;
-        grid-column-gap: 20px;
-        margin: 0px;
-        padding: 0px;
-
     }
 }
 
@@ -61,13 +35,9 @@
 
     .gallery__cards {
         justify-items: center;
-        display: -ms-grid;
-        display: grid;
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        grid-row-gap: 17px;
         margin: auto;
-        padding: 0;
 
     }
 }

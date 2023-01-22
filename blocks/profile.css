@@ -156,11 +156,12 @@
     }
 
     .profile__subtitle {
+        display: flex;
         width: 282px;
         grid-row: 4/5;
         font-size: 14px;
         padding: 0px 0px 36px 0px;
-        width: min-content;
+        justify-content: center;
 
     }
 

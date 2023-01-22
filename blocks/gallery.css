@@ -13,7 +13,6 @@
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, min-content);
-    grid-template-rows: 1fr 1fr;
     grid-row-gap: 17px;
     grid-column-gap: 20px;
     margin: 0px;
@@ -23,7 +22,6 @@
 @media screen and (min-width: 769px) and (max-width: 1279px) {
     .gallery__cards {
         grid-template-columns: min-content min-content;
-        grid-template-rows: 1fr 1fr 1fr;
     }
 }
 

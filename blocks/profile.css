@@ -41,7 +41,6 @@
     color: #FFFFFF;
     margin: 0px 0px 16px 0px;
     padding: 0px;
-    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -120,7 +119,6 @@
 
     .profile__subtitle {
         padding: 0px;
-        width: min-content;
 
     }
 
@@ -157,12 +155,11 @@
     }
 
     .profile__subtitle {
-        display: flex;
         width: 282px;
         grid-row: 4/5;
         font-size: 14px;
         padding: 0px 0px 36px 0px;
-        justify-content: center;
+        text-align: center;
 
     }
 

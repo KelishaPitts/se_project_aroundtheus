@@ -25,13 +25,13 @@
                                    <button class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
 
-                                          <label class="form__label" for="fullname">Edit Profile</label>
+                                          <label class="form__label" for="editProfile">Edit Profile</label>
                   
-                                          <input class="form__input" type="text" id="fullname" name="fullname" placeholder="Name"
+                                          <input class="form__input form__input_type_name" type="text" id="fullname" name="fullname" placeholder="Name"
                                               required>
-                                              <input class="form__input" type="text" id="title" name="Aboutme" placeholder="Description"
+                                              <input class="form__input form__input_type_aboutme" type="text" id="Aboutme" name="Aboutme" placeholder="About me"
                                               required>
-                                   <button class="modal__button-submit"> Save</button>
+                                   <button class="modal__button-submit" type="submit"> Save</button>
                             </form>
                    
                      </section>
@@ -47,6 +47,15 @@
 
                      <section class="gallery">
                             <ul class="gallery__cards">
+                                   <template id="card">
+                                          <li class="card">
+                                            <img class="card__image" src="" alt="">
+                                            <div class="card__description">
+                                                 <h2 class="card__title"></h2>
+                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
+                                          </div>
+                                        </template> 
+<!--
                                    <li class="card">
                                           <img class="card__image" src="./images/yosemite.jpg"
                                                  alt="yosemite-valley_image">
@@ -93,7 +102,8 @@
                                                  <button class="card__button-like" type="button" value="like-button"  aria-label="like-button"></button>
                                           </div>
                                    </li>
-                            </ul>
+                            </ul>-->
+                            
                      </section>
               </main>
 

@@ -34,11 +34,11 @@
     outline: 0;
     background: transparent;
     border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
-    padding: 0 0 13.2px 0;
+    padding: 0 0 13px 0;
 }
 
 
-.form__input#fullname{
+.form__input_type_name{
     margin-bottom: 30px;
 }
 
@@ -59,19 +59,21 @@
         margin-top: 25px;
         margin-bottom: 75px;
         font-size: 18px;
-        line-height: 22px;
+        line-height: 21.7px;
     }
     .form__input{
         font-size: 14px;
         width: 238px;
 
     }
-    .form__input#description{
-        margin-top: 57px;
+    .form__input_type_aboutme{
+        margin-top: 30px;
         
     }
 
-    
+    .form__input_type_name{
+        margin-bottom:0;
+    }
 
 
 }

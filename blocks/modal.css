@@ -64,6 +64,7 @@
         right: 19px;
         margin: 0;
         padding: 0;
+        height: 322px;
 
     }
     .modal__container{
@@ -77,7 +78,7 @@
         margin: -53px 0 0 0;
         width: 26px;
         height: 26px;
-        padding: 26px;
+       
     }
     .modal__button-submit{
         width: 238px;

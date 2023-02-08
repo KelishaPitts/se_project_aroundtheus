@@ -14,7 +14,7 @@ button{
     top: 195px;
     bottom: 195px;
 }
-.modal-modal_opened{
+.modal_opened{
     display: flex;
 }
 

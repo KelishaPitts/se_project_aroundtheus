@@ -31,12 +31,13 @@ const closeButton = popUp.querySelector(".modal__button-close");
 const saveButton = popUp.querySelector(".modal__button-submit");
 const nameInput = document.querySelector(".form__input_type_name");
 const jobInput = document.querySelector(".form__input_type_aboutme");
-const titleName = document.querySelector(".profile__title");
-const subtitleName = document.querySelector(".profile__subtitle");
-const Form = popUp.querySelector("form");
+const profileName = document.querySelector(".profile__title");
+const profileDescription = document.querySelector(".profile__subtitle");
+const formData = popUp.querySelector("form");
+
 
 // add content
-let cardList = document.querySelector(".gallery__cards");
+const cardList = document.querySelector(".gallery__cards");
 
 function getCardElement(card) {
   const cardTemplate = document.querySelector("#card");
@@ -60,13 +61,13 @@ renderCards(initialCards);
 
 //Open Modal
 function openModal() {
-  popUp.classList.add("modal-modal_opened");
-  nameInput.value = titleName.textContent;
-  jobInput.value = subtitleName.textContent;
+  popUp.classList.add("modal_opened");
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileDescription.textContent;
 }
 //Close Modal
 function closeModal() {
-  popUp.classList.remove("modal-modal_opened");
+  popUp.classList.remove("modal_opened");
 }
 //Edit Profile button that opens Modal
 addButton.addEventListener("click", openModal);
@@ -76,8 +77,9 @@ closeButton.addEventListener("click", closeModal);
 // Submit changes to Profile
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  titleName.textContent = nameInput.value;
-  subtitleName.textContent = jobInput.value;
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = jobInput.value;
+  closeModal();
 }
 
-Form.addEventListener("submit", handleProfileFormSubmit);
+formData.addEventListener("submit", handleProfileFormSubmit);

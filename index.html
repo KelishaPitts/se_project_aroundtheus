@@ -10,7 +10,7 @@
        <title>Around the US</title>
        <link rel="icon" href="./favicon.ico">
        <link rel="stylesheet" href="./pages/index.css">
-       
+
 </head>
 
 <body class="page">
@@ -20,28 +20,30 @@
               </header>
 
               <main class="content">
-                     <section class="modal"> 
+                     <section class="modal">
                             <form class="modal__container">
                                    <button class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
 
                                           <label class="form__label" for="editProfile">Edit Profile</label>
-                  
-                                          <input class="form__input form__input_type_name" type="text" id="fullname" name="fullname" placeholder="Name"
-                                              required>
-                                              <input class="form__input form__input_type_aboutme" type="text" id="Aboutme" name="Aboutme" placeholder="About me"
-                                              required>
-                                   <button class="modal__button-submit" type="submit"> Save</button>
+
+                                          <input class="form__input form__input_type_name" type="text" id="fullname"
+                                                 name="fullname" placeholder="Name" required>
+                                          <input class="form__input form__input_type_aboutme" type="text" id="Aboutme"
+                                                 name="Aboutme" placeholder="About me" required>
+                                          <button class="modal__button-submit" type="submit"> Save</button>
                             </form>
-                   
+
                      </section>
                      <section class="profile">
                             <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="profile-avatar">
                             <div class=" profile__heading">
                                    <h1 class="profile__title">Jacques Cousteau</h1>
-                                   <button class="profile__button-edit" type="button" value="edit-button" aria-label="edit-button"></button>
+                                   <button class="profile__button-edit" type="button" value="edit-button"
+                                          aria-label="edit-button"></button>
                             </div>
-                            <button class="profile__button-add" type="button" value="add-button" aria-label="add-button"></button>
+                            <button class="profile__button-add" type="button" value="add-button"
+                                   aria-label="add-button"></button>
                             <p class="profile__subtitle">Explorer</p>
                      </section>
 
@@ -49,70 +51,22 @@
                             <ul class="gallery__cards">
                                    <template id="card">
                                           <li class="card">
-                                            <img class="card__image" src="" alt="">
-                                            <div class="card__description">
-                                                 <h2 class="card__title"></h2>
-                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
-                                          </div>
-                                        </template> 
-<!--
-                                   <li class="card">
-                                          <img class="card__image" src="./images/yosemite.jpg"
-                                                 alt="yosemite-valley_image">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Yosemite Valley</h2>
-                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                                   <li class="card">
-                                          <img class="card__image" src="./images/lake-louise.jpg"
-                                                 alt="lake-louise_image">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Lake Louise</h2>
-                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                                   <li class="card">
-                                          <img class="card__image" src="./images/bald-mountains.jpg"
-                                                 alt="bald-mountains_image">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Bald Mountains</h2>
-                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                                   <li class="card">
-                                          <img class="card__image" src="./images/latemar.jpg"
-                                                 alt="latemar-mountian_image">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Latemar</h2>
-                                                 <button class="card__button-like" type="button" value="like-button" aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                                   <li class="card">
-                                          <img class="card__image" src="./images/vanoise.jpg" alt="vanoise_image" aria-label="like-button">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Vanoise National Park</h2>
-                                                 <button class="card__button-like" type="button" value="like-button"  aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                                   <li class="card">
-                                          <img class="card__image" src="./images/lago.jpg" alt="lago_image">
-                                          <div class="card__description">
-                                                 <h2 class="card__title">Lago di Braies </h2>
-                                                 <button class="card__button-like" type="button" value="like-button"  aria-label="like-button"></button>
-                                          </div>
-                                   </li>
-                            </ul>-->
-                            
+                                                 <img class="card__image" src="" alt="">
+                                                 <div class="card__description">
+                                                        <h2 class="card__title"></h2>
+                                                        <button class="card__button-like" type="button"
+                                                               value="like-button" aria-label="like-button"></button>
+                                                 </div>
+                                   </template>
+
+
                      </section>
               </main>
-
-
               <footer class="footer">
                      <p class="footer__copywrite">&copy; 2022 Around The U.S.</p>
               </footer>
        </div>
-       <script src="./scripts/index.js"> </script>
+       <script src="./scripts/index.js" defer> </script>
 </body>
 
 </html>

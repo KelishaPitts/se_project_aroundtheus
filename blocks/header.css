@@ -21,9 +21,6 @@
     margin: 0px 0px 41px 0px;
 }
 
-.header__footer {}
-
-
 @media screen and (min-width: 768px) and (max-width: 1279px) {
     .header {
         justify-content: flex-start;
@@ -36,7 +33,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
     .header {
-      margin: 0px;
+        margin: 0px;
     }
 
     .header__logo {

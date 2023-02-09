@@ -1,5 +1,4 @@
-
-.form__fieldset{
+.form__fieldset {
     padding: 34px 36px 36.5px 36px;
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +9,7 @@
 
 }
 
-.form__label{
+.form__label {
 
     margin-bottom: 54px;
     font-family: Inter;
@@ -19,10 +18,10 @@
     line-height: 29px;
     letter-spacing: 0em;
     text-align: left;
-    
+
 }
 
-.form__input{
+.form__input {
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
@@ -33,46 +32,50 @@
     width: 358px;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0 0 13px 0;
 }
 
 
-.form__input_type_name{
+.form__input_type_name {
     margin-bottom: 30px;
 }
 
-.form__input::placeholder{
-    color:#000000;
+.form__input::placeholder {
+    color: #000000;
     margin-bottom: 45px;
-    
+
 
 }
-@media screen and (min-width: 320px) and (max-width: 768px){
-    .form__fieldset{
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .form__fieldset {
         margin-left: 22px;
         width: 282px;
         padding: 0;
         margin: 0;
     }
-    .form__label{
+
+    .form__label {
         margin-top: 25px;
         margin-bottom: 75px;
         font-size: 18px;
         line-height: 21.7px;
     }
-    .form__input{
+
+    .form__input {
         font-size: 14px;
         width: 238px;
 
     }
-    .form__input_type_aboutme{
+
+    .form__input_type_aboutme {
         margin-top: 30px;
-        
+
     }
 
-    .form__input_type_name{
-        margin-bottom:0;
+    .form__input_type_name {
+        margin-bottom: 0;
     }
 
 

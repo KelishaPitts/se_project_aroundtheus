@@ -1,12 +1,12 @@
-button{
+button {
     cursor: pointer;
 }
 
-.modal{
+.modal {
     margin: 0;
     display: none;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     padding: 0;
     position: absolute;
     left: 425px;
@@ -14,16 +14,18 @@ button{
     top: 195px;
     bottom: 195px;
 }
-.modal_opened{
+
+.modal_opened {
     display: flex;
 }
 
-.modal__container{
-    background-color: #FFFFFF; 
+.modal__container {
+    background-color: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
-.modal__button-close{
+
+.modal__button-close {
     display: flex;
     background-image: url(../images/close-icon.svg);
     background-position: center;
@@ -36,11 +38,12 @@ button{
     margin: -40px -40px 0 430px;
     transition: opacity 1s ease;
 }
-.modal__button-close:hover{
+
+.modal__button-close:hover {
     opacity: .6;
 }
 
-.modal__button-submit{
+.modal__button-submit {
     background-color: #000000;
     color: #FFFFFF;
     justify-items: center;
@@ -56,12 +59,13 @@ button{
     margin: 48px 0 0 0;
     transition: opacity 1s ease;
 }
-.modal__button-submit:hover{
- opacity: .8;
+
+.modal__button-submit:hover {
+    opacity: .8;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px){
-    .modal{
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .modal {
         position: absolute;
         top: 123px;
         left: 19px;
@@ -71,20 +75,23 @@ button{
         height: 322px;
 
     }
-    .modal__container{
+
+    .modal__container {
         display: flex;
         flex-direction: row-reverse;
         align-content: center;
         width: 282px;
         flex-wrap: wrap;
     }
-    .modal__button-close{
+
+    .modal__button-close {
         margin: -53px 0 0 0;
         width: 26px;
         height: 26px;
-       
+
     }
-    .modal__button-submit{
+
+    .modal__button-submit {
         width: 238px;
         height: 46px;
         margin-top: 45px;

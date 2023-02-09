@@ -85,7 +85,7 @@
 .profile__button-add {
     width: 150px;
     height: 50px;
-    background-color:transparent;
+    background-color: transparent;
     border-radius: 2px;
     border: 2px solid #FFFFFF;
     padding: 0px;
@@ -105,7 +105,7 @@
 }
 
 
-@media screen and (max-width: 1279px) and (min-width:769px){
+@media screen and (max-width: 1279px) and (min-width:769px) {
     .profile {
         margin: 36px 27px 0px 27px;
     }
@@ -114,7 +114,7 @@
         align-content: center;
     }
 
-    .profile__image{
+    .profile__image {
         margin-bottom: 0px;
     }
 

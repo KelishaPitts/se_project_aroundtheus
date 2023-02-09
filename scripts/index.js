@@ -33,8 +33,7 @@ const nameInput = document.querySelector(".form__input_type_name");
 const jobInput = document.querySelector(".form__input_type_aboutme");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
-const formData = popUp.querySelector("form");
-
+const formElement = popUp.querySelector("form");
 
 // add content
 const cardList = document.querySelector(".gallery__cards");
@@ -48,15 +47,20 @@ function getCardElement(card) {
   cardImage.alt = `Photo of ${card.name}`;
 
   cardTitle.textContent = card.name;
+  return cardElement;
+}
 
+function renderCard(cardElement) {
   cardList.append(cardElement);
 }
 
 function renderCards(data) {
   for (card of data) {
-    getCardElement(card);
+    const cardElement = getCardElement(card);
+    renderCard(cardElement);
   }
 }
+
 renderCards(initialCards);
 
 //Open Modal
@@ -82,4 +86,4 @@ function handleProfileFormSubmit(evt) {
   closeModal();
 }
 
-formData.addEventListener("submit", handleProfileFormSubmit);
+formElement.addEventListener("submit", handleProfileFormSubmit);

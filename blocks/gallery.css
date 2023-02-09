@@ -19,8 +19,9 @@
     padding: 0px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1279px) {
+@media screen and (min-width: 769px) and (max-width: 980px) {
     .gallery__cards {
+        margin: 47px 200px 67px 200px;
         grid-template-columns: min-content min-content;
     }
 }

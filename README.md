@@ -3,8 +3,10 @@
 # Fuction
 Responsive Image gallery with mobile and tablet versions.
 Add new cards by inputing a link and description into form.
+Delete cards with card remove button.
 Change profile name with form input.
 Click on image to display image popup.  
+
 
 # Technology 
 View Images in a dynamic photo gallery.

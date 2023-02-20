@@ -20,9 +20,9 @@
               </header>
 
               <main class="content">
-                     <section class="modal">
+                     <section class="modal" id="edit-profile-form">
                             <form class="modal__container">
-                                   <button class="modal__button-close"> </button>
+                                   <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
 
                                           <label class="form__label" for="editProfile">Edit Profile</label>
@@ -33,8 +33,30 @@
                                                  name="Aboutme" placeholder="About me" required>
                                           <button class="modal__button-submit" type="submit"> Save</button>
                             </form>
+                     </section>
+                     <section class="modal" id="add-place-form">
+                            <form class="modal__container">
+                                   <button type="button" class="modal__button-close"> </button>
+                                   <fieldset class="form__fieldset">
+                                          <label class="form__label" for="newPlace">New Place</label>
+                                          <input class="form__input form__input_type_title" type="text" id="title"
+                                                 name="title" placeholder="Title" required>
+                                          <input class="form__input form__input_type_imageURL" type="text" id="imageURL"
+                                                 name="imageURL" placeholder="Image URL" required>
+                                          <button class="modal__button-submit" type="submit"> Create</button>
+                            </form>
 
                      </section>
+                     <section class="modal" id="image-display">
+                            <div class="modal__image-container">
+                                   <button type="button" class="modal__button-close" id="modal-image-close"> </button>
+                                   <img class="modal__image" src="" alt="">
+                                   <p class="modal__image-text"></p>
+
+                            </div>
+                     </section>
+
+
                      <section class="profile">
                             <img class="profile__image" src="./images/jacques-cousteau.jpg" alt="profile-avatar">
                             <div class=" profile__heading">
@@ -50,7 +72,9 @@
                      <section class="gallery">
                             <ul class="gallery__cards">
                                    <template id="card">
-                                          <li class="card">
+                                          <li class="card" id="">
+                                                 <button class="card__button-delete" type="button" value="delete-button"
+                                                        aria-label="delete-button"></button>
                                                  <img class="card__image" src="" alt="">
                                                  <div class="card__description">
                                                         <h2 class="card__title"></h2>
@@ -58,9 +82,11 @@
                                                                value="like-button" aria-label="like-button"></button>
                                                  </div>
                                    </template>
-
-
                      </section>
+
+
+
+
               </main>
               <footer class="footer">
                      <p class="footer__copywrite">&copy; 2022 Around The U.S.</p>

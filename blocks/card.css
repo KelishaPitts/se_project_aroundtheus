@@ -22,6 +22,7 @@
 .card__image {
     height: 282px;
     border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
 }
 
 .card__description {
@@ -64,8 +65,34 @@
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
+
+
 }
 
+
 .card__button-like:hover {
+    opacity: 0.5;
+}
+
+.card__button-like_liked {
+    background-image: url(../images/heard-black-vector.svg);
+}
+
+.card__button-delete {
+    width: 18px;
+    height: 13.5px;
+    position: absolute;
+    margin: 18px 15px 0px 249px;
+    -webkit-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+    background: url(../images/trash.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+}
+
+.card__button-delete:hover {
     opacity: 0.5;
 }

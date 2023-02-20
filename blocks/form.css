@@ -41,11 +41,8 @@
     margin-bottom: 30px;
 }
 
-.form__input::placeholder {
-    color: #000000;
-    margin-bottom: 45px;
-
-
+.form__input_type_title {
+    margin-bottom: 30px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {

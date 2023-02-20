@@ -25,32 +25,34 @@
                                    <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
 
-                                          <label class="form__label" for="editProfile">Edit Profile</label>
+                                          <label class="form__label">Edit Profile</label>
 
                                           <input class="form__input form__input_type_name" type="text" id="fullname"
                                                  name="fullname" placeholder="Name" required>
                                           <input class="form__input form__input_type_aboutme" type="text" id="Aboutme"
                                                  name="Aboutme" placeholder="About me" required>
                                           <button class="modal__button-submit" type="submit"> Save</button>
+                                   </fieldset>
                             </form>
                      </section>
                      <section class="modal" id="add-place-form">
                             <form class="modal__container">
                                    <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
-                                          <label class="form__label" for="newPlace">New Place</label>
+                                          <label class="form__label">New Place</label>
                                           <input class="form__input form__input_type_title" type="text" id="title"
                                                  name="title" placeholder="Title" required>
                                           <input class="form__input form__input_type_imageURL" type="text" id="imageURL"
                                                  name="imageURL" placeholder="Image URL" required>
                                           <button class="modal__button-submit" type="submit"> Create</button>
+                                   </fieldset>
                             </form>
 
                      </section>
                      <section class="modal" id="image-display">
                             <div class="modal__image-container">
                                    <button type="button" class="modal__button-close" id="modal-image-close"> </button>
-                                   <img class="modal__image" src="" alt="">
+                                   <img class="modal__image" src="whitespace" alt="whitespace">
                                    <p class="modal__image-text"></p>
 
                             </div>
@@ -72,7 +74,7 @@
                      <section class="gallery">
                             <ul class="gallery__cards">
                                    <template id="card">
-                                          <li class="card" id="">
+                                          <li class="card">
                                                  <button class="card__button-delete" type="button" value="delete-button"
                                                         aria-label="delete-button"></button>
                                                  <img class="card__image" src="" alt="">
@@ -81,12 +83,11 @@
                                                         <button class="card__button-like" type="button"
                                                                value="like-button" aria-label="like-button"></button>
                                                  </div>
+                                          </li>
+
                                    </template>
+                            </ul>
                      </section>
-
-
-
-
               </main>
               <footer class="footer">
                      <p class="footer__copywrite">&copy; 2022 Around The U.S.</p>

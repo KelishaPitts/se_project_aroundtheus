@@ -65,8 +65,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
-
-
+    cursor: pointer;
 }
 
 
@@ -80,7 +79,7 @@
 
 .card__button-delete {
     width: 18px;
-    height: 13.5px;
+    height: 18px;
     position: absolute;
     margin: 18px 15px 0px 249px;
     -webkit-transition: opacity 1s ease;
@@ -91,6 +90,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
+    cursor: pointer;
 }
 
 .card__button-delete:hover {

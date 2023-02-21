@@ -25,12 +25,14 @@ const initialCards = [
   },
 ];
 
-const editPopUp = document.querySelector("#edit-profile-form");
+const editProfilePopUp = document.querySelector("#edit-profile-form");
 const imagePopUp = document.querySelector("#image-display");
 const addPlacePopUp = document.querySelector("#add-place-form");
 const editProfileButton = document.querySelector(".profile__button-edit");
 const addCardButton = document.querySelector(".profile__button-add");
-const closeProfileButton = editPopUp.querySelector(".modal__button-close");
+const closeProfileButton = editProfilePopUp.querySelector(
+  ".modal__button-close"
+);
 const closeCardButton = addPlacePopUp.querySelector(".modal__button-close");
 const saveButton = document.querySelector(".modal__button-submit");
 const nameInput = document.querySelector(".form__input_type_name");
@@ -40,14 +42,15 @@ const placeUrlInput = document.querySelector(".form__input_type_imageURL");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__subtitle");
 const cardForm = addPlacePopUp.querySelector("form");
-const profileForm = editPopUp.querySelector("form");
+const profileForm = editProfilePopUp.querySelector("form");
+const cardTemplate = document.querySelector("#card");
+const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close");
 
 //cards in gallery container
 const cardList = document.querySelector(".gallery__cards");
 
 //Clone card from template
 function getCardElement(card) {
-  const cardTemplate = document.querySelector("#card");
   const cardElement = cardTemplate.content.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
@@ -70,24 +73,17 @@ function getCardElement(card) {
   cardImage.addEventListener("click", () => {
     const modalImage = document.querySelector(".modal__image");
     const modalImageCaption = document.querySelector(".modal__image-text");
-    const modalImageDeleteButton = imagePopUp.querySelector(
-      ".modal__button-close"
-    );
+
     //Image popup delete button
     modalImage.src = cardImage.src;
     modalImageCaption.textContent = card.name;
     openModal(imagePopUp);
-    modalImageDeleteButton.addEventListener("click", () => {
-      closeModal(imagePopUp);
-    });
   });
-
   return cardElement;
 }
-
 //Add card to gallery card container
 function renderCard(cardElement) {
-  cardList.append(cardElement);
+  cardList.prepend(cardElement);
 }
 
 //Render an array of cards from an array of card information
@@ -101,6 +97,7 @@ function renderCards(data) {
 //Renders cards from an array and place them in gallery cards contianer.
 renderCards(initialCards);
 
+
 //Declares delete card button after cards are rendered.
 const deleteCardButton = document.querySelector(".card__button-delete");
 
@@ -113,12 +110,22 @@ function openModal(popUp) {
 function closeModal(popUp) {
   popUp.classList.remove("modal_opened");
 }
-//Edit Profile button that opens Profile Modal
-editProfileButton.addEventListener("click", () => {
+
+//Fill profle input fields with Name and Job title values
+function fillProfileForm() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
-  openModal(editPopUp);
-});
+}
+
+//Open Profile popup with filled in fields.
+function openEditProfileModal() {
+  // fill profile form using  fillProfileForm
+  fillProfileForm();
+  openModal(editProfilePopUp);
+}
+
+//Edit Profile button that opens Profile Modal
+editProfileButton.addEventListener("click", openEditProfileModal);
 
 // Add Card Button that opens Add Card Modal
 addCardButton.addEventListener("click", () => {
@@ -127,7 +134,12 @@ addCardButton.addEventListener("click", () => {
 
 //Close Button on Edit Profile Modal
 closeProfileButton.addEventListener("click", () => {
-  closeModal(editPopUp);
+  closeModal(editProfilePopUp);
+});
+
+// Close Button on Image Modal
+modalImageDeleteButton.addEventListener("click", () => {
+  closeModal(imagePopUp);
 });
 
 //Close Button on add Card Profile Modal
@@ -140,7 +152,8 @@ function handleProfileFormSubmit(event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
-  closeModal(editPopUp);
+  closeModal(editProfilePopUp);
+  profileForm.reset();
 }
 
 // Submit changes to New Place Card Form
@@ -151,6 +164,7 @@ function handleCardFormSubmit(event) {
   newCard = { name: cardName, link: urlLink };
   addNewCard(newCard);
   closeModal(addPlacePopUp);
+  cardForm.reset();
 }
 
 //Creates a new card from Form input
@@ -162,7 +176,6 @@ function addNewCard(newCard) {
 //Removes Card
 function removeCard(e) {
   e.target.parentNode.remove(".card");
-  console.log("remove");
 }
 
 //Submit profile form input informatiom

@@ -74,6 +74,7 @@
     background: url(../images/pencil.svg);
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .profile__button-edit:hover {
@@ -96,6 +97,7 @@
     background: url(../images/add-button.svg);
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 
 }
 

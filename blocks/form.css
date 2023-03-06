@@ -9,7 +9,7 @@
 
 }
 
-.form__label {
+.form__title {
 
     margin-bottom: 54px;
     font-family: Inter;
@@ -37,13 +37,25 @@
 }
 
 
-.form__input_type_name {
-    margin-bottom: 30px;
-}
 
-.form__input_type_title {
-    margin-bottom: 30px;
-}
+.form__input_type_error {
+  width: 358px;
+  color: red;
+  transition: 0.1s;
+  margin-bottom: 30px;
+    
+  }
+
+  .form__error-field:invalid{
+    border-bottom: red 1px solid;
+  }
+  
+.form__input-error_active {
+    opacity: 1;
+
+  }
+  
+
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
     .form__fieldset {

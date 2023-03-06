@@ -84,13 +84,22 @@
     line-height: 22px;
     letter-spacing: 0em;
     text-align: center;
-    margin: 48px 0 0 0;
+    margin: 18px 0 0 0;
     transition: opacity 1s ease;
     cursor: pointer;
 }
 
 .modal__button-submit:hover {
     opacity: .8;
+}
+
+.modal__button-submit_inactive{
+    background-color: white;
+    border-color: rgba(0, 0, 0, 0.2);
+    color:  rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {

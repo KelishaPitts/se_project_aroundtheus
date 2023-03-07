@@ -34,15 +34,19 @@
     background: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0 0 13px 0;
+
 }
 
-
+.form__label {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 21.7px;
+}
 
 .form__input_type_error {
   width: 358px;
   color: red;
   transition: 0.1s;
-  margin-bottom: 30px;
     
   }
 
@@ -54,6 +58,22 @@
     opacity: 1;
 
   }
+
+  .title-error{
+    margin-bottom: 30px;
+  }
+
+  .imageURL-error{
+    margin-bottom:30px ;
+  }
+
+  .form__input_type_name {
+    margin-bottom: 30px;
+}
+
+.form__input_type_title {
+    margin-bottom: 30px;
+}
   
 
 
@@ -65,12 +85,14 @@
         margin: 0;
     }
 
-    .form__label {
+    .form__title{
         margin-top: 25px;
         margin-bottom: 75px;
         font-size: 18px;
         line-height: 21.7px;
+
     }
+
 
     .form__input {
         font-size: 14px;
@@ -78,13 +100,8 @@
 
     }
 
-    .form__input_type_aboutme {
-        margin-top: 30px;
-
-    }
-
-    .form__input_type_name {
-        margin-bottom: 0;
+    .form__input_type_error {
+        width: 238px;
     }
 
 

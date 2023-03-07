@@ -13,6 +13,21 @@
 
 </head>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="description" content="Project 3 of Practicum's Software Engineer course.">
+       <meta name="author" content="Kelisha Pitts">
+       <meta name="keywords" content="images, gallery, responsive, moblie, image gallery, photos, Practicum, project 3">
+       <title>Around the US</title>
+       <link rel="icon" href="./favicon.ico">
+       <link rel="stylesheet" href="./pages/index.css">
+
+</head>
+
 <body class="page">
        <div class="page__content">
               <header class="header">
@@ -30,14 +45,14 @@
                                           <label class="form__error-field">
                                           <input class="form__input form__input_type_name" type="text" id="fullname"
                                                  name="fullname" placeholder="Name" minlength="2" maxlength="40" required>
-                                          </label>
                                                  <span class="form__input_type_error fullname-error" ></span>
+                                          </label>
                                           
                                           <label class="form__error-field">     
                                           <input class="form__input form__input_type_aboutme" type="text" id="Aboutme"
                                                  name="Aboutme" placeholder="About me"minlength="2" maxlength="200" required>
-                                                 </label>
                                                  <span class="form__input_type_error Aboutme-error" ></span>
+                                          </label>
                                           <button class="modal__button-submit" type="submit"> Save</button>
                                    </fieldset>
                             </form>
@@ -50,13 +65,14 @@
                                           <label class="form__error-field">
                                           <input class="form__input form__input_type_title" type="text" id="title"
                                                  name="title" placeholder="Title" minlength="1" maxlength="30" required>
-                                          </label>
                                                  <span class="form__input_type_error title-error" ></span>
+                                          </label>
                                                  <label class="form__error-field">
                                           <input class="form__input form__input_type_imageURL" type="url" id="imageURL"
                                                  name="imageURL" placeholder="Image URL" required>
-                                                 </label>
+                                   
                                                  <span class="form__input_type_error imageURL-error" ></span>
+                                                 </label>
                                           <button class="modal__button-submit" type="submit"> Create</button>
                                    </fieldset>
                             </form>
@@ -107,6 +123,7 @@
               </footer>
        </div>
        <script src="./scripts/index.js" defer> </script>
+       <script src="./scripts/validate.js" defer> </script>
 </body>
 
 </html>

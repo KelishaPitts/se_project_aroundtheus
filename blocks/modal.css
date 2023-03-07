@@ -84,7 +84,7 @@
     line-height: 22px;
     letter-spacing: 0em;
     text-align: center;
-    margin: 18px 0 0 0;
+    margin: 48px 0 0 0;
     transition: opacity 1s ease;
     cursor: pointer;
 }
@@ -129,7 +129,7 @@
     .modal__button-submit {
         width: 238px;
         height: 46px;
-        margin-top: 45px;
+        margin-top: 46px;
         margin-bottom: 25px;
         font-size: 14px;
     }

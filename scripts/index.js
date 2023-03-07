@@ -1,3 +1,4 @@
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -45,7 +46,8 @@ const profileDescription = document.querySelector(".profile__subtitle");
 const cardForm = addPlacePopUp.querySelector("form");
 const profileForm = editProfilePopUp.querySelector("form");
 const cardTemplate = document.querySelector("#card");
-const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close");
+const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close")
+
 
 //cards in gallery container
 const cardList = document.querySelector(".gallery__cards");
@@ -178,86 +180,30 @@ function removeCard(e) {
   e.target.parentNode.remove(".card");
 }
 
-//Valdiate Forms
-const showInputError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add("form__error-field");
-  inputElement.classList.add("form__input_error");
-  errorElement.textContent = errorMessage;
-  errorElement.classList.add("form__input-error_active");
-};
 
-const hideInputError = (formElement, inputElement) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.remove("form__error-field");
-  inputElement.classList.remove("form__input_type_error");
-  errorElement.classList.remove("form__input-error_active");
+//Close modal by clicking outside of modal
+const clickOffPopUP =(modalElement) =>{
+  modalElement.addEventListener("mousedown", function (evt) {
+    if (!evt.target.closest(".modal__container") && !evt.target.closest(".modal__image-container")){
+      closeModal(modalElement);
+    
 
-  errorElement.textContent = "";
-};
+}})}
 
-const checkInputValidity = (formElement, inputElement) => {
-  if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-    hideInputError(formElement, inputElement);
-  }
-};
+//Close modal by clicking outside of image modal
+clickOffPopUP(imagePopUp);
 
-const hasInvalidInput = (inputList) => {
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-};
+//Close modal by clicking outside of edit profile modal
+clickOffPopUP(editProfilePopUp);
 
-const toggleButtonState = (inputList, buttonElement) => {
-  console.log(hasInvalidInput(inputList));
-  if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("modal__button-submit_inactive");
-  } else {
-    buttonElement.classList.remove("modal__button-submit_inactive");
-  }
-};
+//Close modal by clicking outside of add card modal
+clickOffPopUP(addPlacePopUp);
 
-const setEventListeners = (formElement) => {
-  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
-  const buttonElement = formElement.querySelector(".modal__button-submit");
-  toggleButtonState(inputList, buttonElement);
-
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
-    });
-  });
-};
-
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(".form"));
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", function (evt) {
-      evt.preventDefault();
-    });
-
-    const fieldsetList = Array.from(
-      formElement.querySelectorAll(".form__fieldset")
-    );
-
-    fieldsetList.forEach((fieldset) => {
-      setEventListeners(fieldset);
-    });
-  });
-};
-
-
-
-
+//Close modals by pressing Escape key
 document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
-    console.log("hi");
     modalList = Array.from(document.querySelectorAll(".modal"));
     modalList.forEach((modalElement) => {
-      console.log("print")
       closeModal(modalElement);
     });
   }
@@ -266,6 +212,8 @@ document.addEventListener("keydown", function (evt) {
 }, false
 
 );
+
+
 
 //Submit profile form input informatiom
 profileForm.addEventListener("submit", handleProfileFormSubmit);

@@ -1,4 +1,3 @@
-
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -46,8 +45,7 @@ const profileDescription = document.querySelector(".profile__subtitle");
 const cardForm = addPlacePopUp.querySelector("form");
 const profileForm = editProfilePopUp.querySelector("form");
 const cardTemplate = document.querySelector("#card");
-const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close")
-
+const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close");
 
 //cards in gallery container
 const cardList = document.querySelector(".gallery__cards");
@@ -180,15 +178,17 @@ function removeCard(e) {
   e.target.parentNode.remove(".card");
 }
 
-
 //Close modal by clicking outside of modal
-const clickOffPopUP =(modalElement) =>{
+const clickOffPopUP = (modalElement) => {
   modalElement.addEventListener("mousedown", function (evt) {
-    if (!evt.target.closest(".modal__container") && !evt.target.closest(".modal__image-container")){
+    if (
+      !evt.target.closest(".modal__container") &&
+      !evt.target.closest(".modal__image-container")
+    ) {
       closeModal(modalElement);
-    
-
-}})}
+    }
+  });
+};
 
 //Close modal by clicking outside of image modal
 clickOffPopUP(imagePopUp);
@@ -200,20 +200,18 @@ clickOffPopUP(editProfilePopUp);
 clickOffPopUP(addPlacePopUp);
 
 //Close modals by pressing Escape key
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    modalList = Array.from(document.querySelectorAll(".modal"));
-    modalList.forEach((modalElement) => {
-      closeModal(modalElement);
-    });
-  }
-
-  
-}, false
-
+document.addEventListener(
+  "keydown",
+  function (evt) {
+    if (evt.key === "Escape") {
+      modalList = Array.from(document.querySelectorAll(".modal"));
+      modalList.forEach((modalElement) => {
+        closeModal(modalElement);
+      });
+    }
+  },
+  false
 );
-
-
 
 //Submit profile form input informatiom
 profileForm.addEventListener("submit", handleProfileFormSubmit);

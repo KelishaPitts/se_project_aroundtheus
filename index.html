@@ -42,16 +42,18 @@
 
                                           <h2 class="form__title">Edit Profile</h2>
 
-                                          <label class="form__error-field">
-                                          <input class="form__input form__input_type_name" type="text" id="fullname"
-                                                 name="fullname" placeholder="Name" minlength="2" maxlength="40" required>
-                                                 <span class="form__input_type_error fullname-error" ></span>
+                                          <label class="form__error-field full-name" for="fullname">
+                                                 <input class="form__input form__input_type_name" type="text"
+                                                        id="fullname" name="fullname" placeholder="Name" minlength="2"
+                                                        maxlength="40" required>
+                                                 <span class="form__input_type_error fullname-error"></span>
                                           </label>
-                                          
-                                          <label class="form__error-field">     
-                                          <input class="form__input form__input_type_aboutme" type="text" id="Aboutme"
-                                                 name="Aboutme" placeholder="About me"minlength="2" maxlength="200" required>
-                                                 <span class="form__input_type_error Aboutme-error" ></span>
+
+                                          <label class="form__error-field" for="Aboutme">
+                                                 <input class="form__input form__input_type_aboutme" type="text"
+                                                        id="Aboutme" name="Aboutme" placeholder="About me" minlength="2"
+                                                        maxlength="200" required>
+                                                 <span class="form__input_type_error Aboutme-error"></span>
                                           </label>
                                           <button class="modal__button-submit" type="submit"> Save</button>
                                    </fieldset>
@@ -62,17 +64,18 @@
                                    <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
                                           <h2 class="form__title">New Place</h2>
-                                          <label class="form__error-field">
-                                          <input class="form__input form__input_type_title" type="text" id="title"
-                                                 name="title" placeholder="Title" minlength="1" maxlength="30" required>
-                                                 <span class="form__input_type_error title-error" ></span>
+                                          <label class="form__error-field title-card" for="title">
+                                                 <input class="form__input form__input_type_title" type="text"
+                                                        id="title" name="title" placeholder="Title" minlength="1"
+                                                        maxlength="30" required>
+                                                 <span class="form__input_type_error title-error"></span>
                                           </label>
-                                                 <label class="form__error-field">
-                                          <input class="form__input form__input_type_imageURL" type="url" id="imageURL"
-                                                 name="imageURL" placeholder="Image URL" required>
-                                   
-                                                 <span class="form__input_type_error imageURL-error" ></span>
-                                                 </label>
+                                          <label class="form__error-field" for="imageURL">
+                                                 <input class="form__input form__input_type_imageURL" type="url"
+                                                        id="imageURL" name="imageURL" placeholder="Image URL" required>
+
+                                                 <span class="form__input_type_error imageURL-error"></span>
+                                          </label>
                                           <button class="modal__button-submit" type="submit"> Create</button>
                                    </fieldset>
                             </form>

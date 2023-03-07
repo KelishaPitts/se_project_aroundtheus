@@ -57,7 +57,7 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
   console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     disableButton(buttonElement, inactiveButtonClass);
-    
+
   } else {
     enableButton(buttonElement, inactiveButtonClass);
   }
@@ -97,6 +97,6 @@ enableValidation({
   inputSelector: ".form__input",
   submitButtonSelector: ".modal__button-submit",
   inactiveButtonClass: "modal__button-submit_inactive",
-  inputErrorClass: "form__input_type_error",
+  inputErrorClass: "form__error-text",
   errorClass: "form__input-error_active",
 });

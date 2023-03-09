@@ -205,7 +205,7 @@ clickOffPopUP(editProfilePopUp);
 clickOffPopUP(addPlacePopUp);
 
 //Close modals by pressing Escape key
-const escCloseModal = (evt) => {
+const handleEscKeyDown = (evt) => {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_opened");
     closeModal(openedModal);

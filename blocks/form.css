@@ -47,7 +47,7 @@
   margin-bottom: 30px;
 }
 
-.form__input_error {
+.form__input_type_error {
   display: flex;
   flex-direction: column;
   width: 358px;
@@ -57,7 +57,7 @@
 
 }
 
-.form__input_error_active {
+.form__error_active {
   opacity: 1;
   border-top: red 1px solid;
 
@@ -89,7 +89,7 @@
 
   }
 
-  .form__input_error {
+  .form__input_type_error {
     width: 238px;
   }
 

@@ -36,12 +36,8 @@ const checkInputValidity = (formElement, inputElement, enums) => {
   }
 };
 
-const hasInvalidInput = (inputList) => {
-  console.log(inputList);
-  return inputList.some((inputElement) => {
-    return !inputElement.validity.valid;
-  });
-};
+const hasInvalidInput = (inputList) =>
+  inputList.some((inputElement) => !inputElement.validity.valid);
 
 const enableButton = (buttonElement, inactiveButtonClass) => {
   buttonElement.classList.remove(inactiveButtonClass);
@@ -54,10 +50,8 @@ const disableButton = (buttonElement, inactiveButtonClass) => {
 };
 
 const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     disableButton(buttonElement, inactiveButtonClass);
-
   } else {
     enableButton(buttonElement, inactiveButtonClass);
   }
@@ -75,7 +69,6 @@ const setEventListeners = (
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement, rest);
       toggleButtonState(inputList, buttonElement, inactiveButtonClass);
-      console.log(inputElement.validity);
     });
   });
 };
@@ -97,6 +90,6 @@ enableValidation({
   inputSelector: ".form__input",
   submitButtonSelector: ".modal__button-submit",
   inactiveButtonClass: "modal__button-submit_inactive",
-  inputErrorClass: "form__error-text",
-  errorClass: "form__input-error_active",
+  inputErrorClass: "form__input_error",
+  errorClass: "form__input_error_active",
 });

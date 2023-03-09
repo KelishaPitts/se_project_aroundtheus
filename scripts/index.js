@@ -46,6 +46,8 @@ const cardForm = addPlacePopUp.querySelector("form");
 const profileForm = editProfilePopUp.querySelector("form");
 const cardTemplate = document.querySelector("#card");
 const modalImageDeleteButton = imagePopUp.querySelector(".modal__button-close");
+const modalImage = document.querySelector(".modal__image");
+const modalImageCaption = document.querySelector(".modal__image-text");
 
 //cards in gallery container
 const cardList = document.querySelector(".gallery__cards");
@@ -72,9 +74,6 @@ function getCardElement(card) {
 
   //Card image popup
   cardImage.addEventListener("click", () => {
-    const modalImage = document.querySelector(".modal__image");
-    const modalImageCaption = document.querySelector(".modal__image-text");
-
     //Image popup delete button
     modalImage.src = cardImage.src;
     modalImageCaption.textContent = card.name;
@@ -104,11 +103,13 @@ const deleteCardButton = document.querySelector(".card__button-delete");
 //Open Modal function
 function openModal(popUp) {
   popUp.classList.add("modal_opened");
+  document.addEventListener("keydown", escCloseModal);
 }
 
 //Close Modal function
 function closeModal(popUp) {
   popUp.classList.remove("modal_opened");
+  document.removeEventListener("keydown", escCloseModal);
 }
 
 //Fill profle input fields with Name and Job title values
@@ -159,12 +160,19 @@ function handleProfileFormSubmit(event) {
 // Submit changes to New Place Card Form
 function handleCardFormSubmit(event) {
   event.preventDefault();
+  const cardInputList = Array.from(cardForm.querySelectorAll(".form__input"));
+  const cardSaveButton = cardForm.querySelector(".modal__button-submit");
   const cardName = cardTitleInput.value;
   const urlLink = placeUrlInput.value;
   newCard = { name: cardName, link: urlLink };
   addNewCard(newCard);
   closeModal(addPlacePopUp);
   cardForm.reset();
+  toggleButtonState(
+    cardInputList,
+    cardSaveButton,
+    "modal__button-submit_inactive"
+  );
 }
 
 //Creates a new card from Form input
@@ -181,10 +189,7 @@ function removeCard(e) {
 //Close modal by clicking outside of modal
 const clickOffPopUP = (modalElement) => {
   modalElement.addEventListener("mousedown", function (evt) {
-    if (
-      !evt.target.closest(".modal__container") &&
-      !evt.target.closest(".modal__image-container")
-    ) {
+    if (evt.target === evt.currentTarget) {
       closeModal(modalElement);
     }
   });
@@ -200,18 +205,12 @@ clickOffPopUP(editProfilePopUp);
 clickOffPopUP(addPlacePopUp);
 
 //Close modals by pressing Escape key
-document.addEventListener(
-  "keydown",
-  function (evt) {
-    if (evt.key === "Escape") {
-      modalList = Array.from(document.querySelectorAll(".modal"));
-      modalList.forEach((modalElement) => {
-        closeModal(modalElement);
-      });
-    }
-  },
-  false
-);
+const escCloseModal = (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    closeModal(openedModal);
+  }
+};
 
 //Submit profile form input informatiom
 profileForm.addEventListener("submit", handleProfileFormSubmit);

@@ -47,7 +47,7 @@
   margin-bottom: 30px;
 }
 
-.form__error-text {
+.form__input_error {
   display: flex;
   flex-direction: column;
   width: 358px;
@@ -57,12 +57,9 @@
 
 }
 
-.form__input:invalid {
-  border-bottom: red 1px solid;
-}
-
-.form__input-error_active {
+.form__input_error_active {
   opacity: 1;
+  border-top: red 1px solid;
 
 }
 
@@ -92,7 +89,7 @@
 
   }
 
-  .form__error-text {
+  .form__input_error {
     width: 238px;
   }
 

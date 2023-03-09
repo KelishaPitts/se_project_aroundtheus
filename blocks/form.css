@@ -57,9 +57,13 @@
 
 }
 
+.form__input_error{
+border-bottom: red 1px solid;
+}
+
 .form__error_active {
   opacity: 1;
-  border-top: red 1px solid;
+  
 
 }
 

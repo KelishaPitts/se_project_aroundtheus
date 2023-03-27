@@ -2,7 +2,6 @@ import { openModal, imagePopUp } from "./utils.js";
 
 const modalImage = document.querySelector(".modal__image");
 const modalImageCaption = document.querySelector(".modal__image-text");
-const cardImage = document.querySelector(".card__image");
 
 export default class Card {
   constructor({ name, link }, cardSelector) {

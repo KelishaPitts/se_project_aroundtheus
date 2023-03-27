@@ -82,7 +82,7 @@ const formValidatorConfig = {
 
 const addformValidator = new FormValidator(formValidatorConfig, formElement);
 addformValidator.enableValidation();
-
+ 
 export{renderCard, renderCards,createNewCard};
   
 

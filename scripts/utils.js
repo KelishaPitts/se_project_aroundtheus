@@ -1,4 +1,5 @@
 import {createNewCard} from './index.js';
+import FormValidator from './FormValidator.js';
 
 
 
@@ -133,16 +134,14 @@ function handleProfileFormSubmit(event) {
     const cardSaveButton = cardForm.querySelector(".modal__button-submit");
     const cardName = cardTitleInput.value;
     const urlLink = placeUrlInput.value;
+    const checkForm = new FormValidator(cardForm);
     createNewCard(cardName,urlLink);
    
 
     closeModal(addPlacePopUp);
     cardForm.reset();
-    toggleButtonState(
-      cardInputList,
-      cardSaveButton,
-      "modal__button-submit_inactive"
-      
+    checkForm.toggleButtonState(
+      cardInputList, cardSaveButton
     );
   
   }

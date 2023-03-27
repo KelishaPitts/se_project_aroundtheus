@@ -1,5 +1,4 @@
 import { openModal, imagePopUp } from "./utils.js";
-import { renderCard } from "./index.js";
 
 const modalImage = document.querySelector(".modal__image");
 const modalImageCaption = document.querySelector(".modal__image-text");
@@ -49,11 +48,6 @@ export default class Card {
       .content.querySelector(".card")
       .cloneNode(true);
     return this._cardElement;
-  }
-
-  addNewCard() {
-    const newCardElement = this._getCardElement();
-    return renderCard(newCardElement);
   }
 
   generateCard() {

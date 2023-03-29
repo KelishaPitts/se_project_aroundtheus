@@ -1,4 +1,5 @@
-import { openModal, imagePopUp } from "./utils.js";
+import { openModal } from "./utils.js";
+import { imagePopUp } from "./index.js";
 
 const modalImage = document.querySelector(".modal__image");
 const modalImageCaption = document.querySelector(".modal__image-text");
@@ -10,25 +11,27 @@ export default class Card {
     this._cardSelector = cardSelector;
   }
   _setEventListeners() {
-    this._cardElement
-      .querySelector(".card__button-like")
-      .addEventListener("click", () => {
-        this._likeCard();
-      });
+    this._cardLikeButton =
+      this._cardElement.querySelector(".card__button-like");
 
-    this._cardElement
-      .querySelector(".card__button-delete")
-      .addEventListener("click", () => {
-        this._deleteCard();
-      });
+    this._cardDeleteButton = this._cardElement.querySelector(
+      ".card__button-delete"
+    );
 
-    this._cardElement
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
-        modalImage.src = this._link;
-        modalImageCaption.textContent = this._name;
-        openModal(imagePopUp);
-      });
+    this._cardLikeButton.addEventListener("click", () => {
+      this._likeCard();
+    });
+
+    this._cardDeleteButton.addEventListener("click", () => {
+      this._deleteCard();
+    });
+
+    this._cardImage.addEventListener("click", () => {
+      modalImage.src = this._link;
+      modalImage.alt = `Popup photo of ${this._name}`;
+      modalImageCaption.textContent = this._name;
+      openModal(imagePopUp);
+    });
   }
 
   _deleteCard() {
@@ -36,9 +39,7 @@ export default class Card {
   }
 
   _likeCard() {
-    this._cardElement
-      .querySelector(".card__button-like")
-      .classList.toggle("card__button-like_liked");
+    this._cardLikeButton.classList.toggle("card__button-like_liked");
   }
 
   _getCardElement() {
@@ -51,11 +52,10 @@ export default class Card {
 
   generateCard() {
     this._cardElement = this._getCardElement();
+    this._cardImage = this._cardElement.querySelector(".card__image");
     this._setEventListeners();
-    this._cardElement.querySelector(".card__image").src = this._link;
-    this._cardElement.querySelector(
-      ".card__image"
-    ).alt = `Photo of ${this._name}`;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = `Photo of ${this._name}`;
     this._cardElement.querySelector(".card__title").textContent = this._name;
 
     return this._cardElement;

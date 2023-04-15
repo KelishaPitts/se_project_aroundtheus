@@ -1,3 +1,4 @@
+/*
 //Open Modal function
 function openModal(popUp) {
   popUp.classList.add("modal_opened");
@@ -18,3 +19,4 @@ const handleEscKeyDown = (evt) => {
 };
 
 export { openModal, closeModal, handleEscKeyDown };
+*/

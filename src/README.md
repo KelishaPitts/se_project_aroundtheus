@@ -1,9 +1,9 @@
 # Project 7: Around The U.S.
 
-# Fuction
+# Function
 Responsive Image gallery with mobile and tablet versions.
 Add new cards by inputing a link and description into form.
-Delete cards with card remove button.
+Delete cards with card remove buttons.
 Change profile name with form input.
 Click on image to display image popup.  
 Close Modals with Escape Key.
@@ -16,6 +16,7 @@ Javascript, flexboxes and grids.
 
 # Updates
 Refactored Code to add Classes and Modules.
+Added in Webpack 
 
 # Git Pages
 https://kelishapitts.github.io/se_project_aroundtheus/

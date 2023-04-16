@@ -22,8 +22,6 @@ avatarImg.src = avatar;
 // Submit changes to Profile Form
 function handleProfileFormSubmit(data) {
   profileUserInput.setUserInfo(data.fullname, data.aboutme);
- 
-  console.log(profileUserInput.getUserInfo());
   addProfileFormValidator.disableButton();
   profileFormPopup.close();
 }
@@ -101,5 +99,7 @@ const addProfileFormValidator = new FormValidator(
 
 addCardFormValidator.enableValidation();
 addProfileFormValidator.enableValidation();
+addCardFormValidator.resetValidation();
+addProfileFormValidator.resetValidation();
 
 export { addCardFormValidator, addProfileFormValidator };

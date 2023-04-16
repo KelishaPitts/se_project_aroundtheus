@@ -1,5 +1,3 @@
-import { profileName,profileDescription } from "../utils/constants";
-
 class UserInfo {
   constructor(userName, userJob) {
     this._userName = userName;

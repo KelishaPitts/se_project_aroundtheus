@@ -6,11 +6,13 @@ const addPlacePopUp = document.querySelector("#add-place-form");
 const imagePopUp = document.querySelector("#image-display");
 const addCardButton = document.querySelector(".profile__button-add");
 const nameInput = document.querySelector(".form__input_type_name");
-const jobInput = document.querySelector(".form__input_type_aboutme");
+const jobInput = document.querySelector(".form__input_type_aboutMe");
 const cardTitleInput = document.querySelector(".form__input_type_title");
 const placeUrlInput = document.querySelector(".form__input_type_imageURL");
 const cardForm = addPlacePopUp.querySelector("form");
 const profileForm = editProfilePopUp.querySelector("form");
+const logoImg = document.querySelector('.header__logo');
+const avatarImg = document.querySelector('.profile__image');
 //cards in gallery container
 const cardList = document.querySelector(".gallery__cards");
 
@@ -41,6 +43,18 @@ const initialCards = [
     },
   ];
 
+  const formValidatorConfig = {
+    inputSelector: ".form__input",
+    submitButtonSelector: ".modal__button-submit",
+    inactiveButtonClass: "modal__button-submit_inactive",
+    inputErrorClass: "form__input_error",
+    errorClass: "form__error_active",
+  };
+  const selectors = {
+    cardSection: ".gallery__cards",
+    cardTemplate: "#card",
+    previewPopup: "#image-display",
+  };
 
   export {editProfileButton,editProfilePopUp,addPlacePopUp,imagePopUp,addCardButton,nameInput,jobInput,cardTitleInput,
-         placeUrlInput,cardForm,profileForm,cardList,initialCards, profileDescription,profileName};
+         placeUrlInput,cardForm,profileForm,cardList,initialCards, profileDescription,profileName,logoImg,avatarImg,formValidatorConfig, selectors};

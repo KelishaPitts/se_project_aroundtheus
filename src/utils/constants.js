@@ -54,7 +54,13 @@ const initialCards = [
     cardSection: ".gallery__cards",
     cardTemplate: "#card",
     previewPopup: "#image-display",
+
+  };
+
+  const userInfoSelectors ={
+    userNameSelector:".profile__title",
+    userJobSelector: ".profile__subtitle"
   };
 
   export {editProfileButton,editProfilePopUp,addPlacePopUp,imagePopUp,addCardButton,nameInput,jobInput,cardTitleInput,
-         placeUrlInput,cardForm,profileForm,cardList,initialCards, profileDescription,profileName,logoImg,avatarImg,formValidatorConfig, selectors};
+         placeUrlInput,cardForm,profileForm,cardList,initialCards, profileDescription,profileName,logoImg,avatarImg,formValidatorConfig, selectors,userInfoSelectors};

@@ -14,15 +14,17 @@ import {
   initialCards,
   cardForm,
   profileForm,
-  selectors
+  selectors,
+  userInfoSelectors
 } from "../utils/constants.js";
 logoImg.src = logo;
 avatarImg.src = avatar;
 
+
+
 // Submit changes to Profile Form
 function handleProfileFormSubmit(data) {
-  profileUserInput.setUserInfo(data.fullname, data.aboutme);
-  addProfileFormValidator.disableButton();
+  profileUserInput.setUserInfo(data.fullname, data.aboutMe);
   profileFormPopup.close();
 }
 
@@ -32,7 +34,6 @@ function handleCardFormSubmit(data) {
   const urlLink = data.imageURL; 
   createNewCard({name: cardName, link: urlLink});
   placeFormPopup.close();
-  addCardFormValidator.disableButton();
 }
 
 //Create new card from input
@@ -42,14 +43,22 @@ function createNewCard(data) {
 }
 
 editProfileButton.addEventListener("click", () => {
-profileFormPopup.open( profileUserInput.getUserInfo());
+profileFormPopup.open();
+addProfileFormValidator.disableButton();
+const userData = profileUserInput.getUserInfo();
+console.log(profileUserInput.getUserInfo());
+nameInput.value = userData.name;
+jobInput.value = userData.job;
+
 });
 addCardButton.addEventListener("click", () => {
   placeFormPopup.open();
+  addCardFormValidator.disableButton();
+  
 });
 
 
-const profileUserInput = new UserInfo(nameInput, jobInput);
+const profileUserInput = new UserInfo(userInfoSelectors.userNameSelector, userInfoSelectors.userJobSelector);
 
 const placeFormPopup = new PopupWithForm(
   { popupSelector: "#add-place-form" },
@@ -72,7 +81,7 @@ function createCard(data) {
       },
     },
     selectors.cardTemplate
-  );
+  ).generateCard();
 return cardElement
 }
 
@@ -80,7 +89,7 @@ return cardElement
 const cardSection = new Section({
   renderer: (data) => { 
     const cardElement = createCard(data)
-    cardSection.addItem(cardElement.generateCard());
+    cardSection.addItem(cardElement);
   },
   containerSelector: selectors.cardSection,
 });

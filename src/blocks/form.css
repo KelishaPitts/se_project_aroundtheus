@@ -9,6 +9,16 @@
 
 }
 
+.form__title_type_confirm{
+  margin: 0;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 .form__title {
 
   margin-bottom: 54px;
@@ -76,6 +86,12 @@ border-bottom: red 1px solid;
     width: 282px;
     padding: 0;
     margin: 0;
+  }
+
+  .form__title_type_confirm{
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 21.7px;
   }
 
   .form__title {

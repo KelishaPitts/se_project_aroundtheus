@@ -21,6 +21,10 @@ class Api {
         console.log(err); // log the error to the console
       });
   }
+  //async loadCards(){
+    //return await Promise.all([getInitialCards,getUserInfo, getUserAvatar,addLike,removeLike]);
+  //}
+
 
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
@@ -103,15 +107,15 @@ class Api {
 }
 
 
-addLike(cardID){
-  return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
+addLike(cardId){
+  return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
     method: "PUT",
     headers: {
       authorization: this._authToken,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      cardID
+      cardId
     }),
   }).then((res) => {
     if (res.ok) {
@@ -125,8 +129,8 @@ addLike(cardID){
   });
 }
 
-removeLike(cardID){
-  return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
+removeLike(cardId){
+  return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
     method: "DELETE",
     headers: {
       authorization: this._authToken,

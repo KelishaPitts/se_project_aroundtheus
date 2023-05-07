@@ -35,6 +35,8 @@ api.getUserAvatar().then(userData =>{
   profileUserInput.setAvatar(userData.avatar)
 })
 
+
+
 api.getUserInfo().then(userData => {
   profileUserInput.setUserInfo(
     userData.name,userData.about
@@ -146,34 +148,44 @@ const cardPopupPrev = new PopupWithImage({ popupSelector: "#image-display" });
 
 
 function createCard(data) {
-
   const cardElement = new Card({
-      data,
+      data:{link: data.link, userId: getUserId() , name:data.name, id: data._id, likes:data.likes,cardOwnerId: data.owner._id},
      
       handleCardClick: (imageData) => {
         cardPopupPrev.open(imageData);
       },
 
-      handleDeleteCardClick: (cardElement)=>{
+      handleDeleteCardClick: (card)=>{
+        console.log(card)
+        console.log(data)
         confirmationPopup.open();
         confirmationPopup.submitAction(()=>{
-        api.deleteCard(data._id).then(()=>{
-          cardElement.deleteCard()
+          console.log(data)
+          const id = card.getId();
+        api.deleteCard(id).then((data)=>{
+          
+          console.log(data)
+          card.handleDeleteCard();
           confirmationPopup.close();
         }).catch((err)=>{
           console.log(err);})
           confirmationPopup.close();
       })
       },
-      handleCardLikes:(data)=>{
-       // if (!cardElement.isLiked()){
-          api.addLike(data._id).then((res)=>{
-            cardElement.updateLike(res.likes)
+      handleCardLikes:(card)=>{
+        console.log(card.userId)
+        if (!card.isCardLiked()){
+          api.addLike(card._id).then((res)=>{
+            card.updateLikes(res.likes)
+          })
+        }else{ 
+          api.removeLike(card._id).then((res)=>{
+            card.updateLikes(res.likes)
           })
         }
       
        
-     // }
+     }
 
 
     },

@@ -9,7 +9,7 @@ export default class Card {
     this._handleCardClick = handleCardClick;
     this._handleDeleteCardClick = handleDeleteCardClick;
     this._handleCardLikes = handleCardLikes;
-    this._cardOwnerId = data.owner_id;
+    this._cardOwnerId = data.cardOwnerId;
     
     
   }
@@ -19,17 +19,8 @@ export default class Card {
   }
 
 
-
-  isButtonLiked(){
-    if (this._cardLikeButton.classList.contians("card__button-like_liked")){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
   isCardLiked(){
-    return this._likes.some((like)=>like.id === this._userId);
+    return this._likes.some((like)=> like.id === this._userId);
   }
 
 updateLikes(likes){
@@ -51,13 +42,12 @@ updateLikes(likes){
 
     this._cardLikeButton.addEventListener("click", () => {
      this._likeCard();
-     this._handleCardLikes( this._id
-     );
+     this._handleCardLikes(this);
     
     });
 
     this._cardDeleteButton.addEventListener("click", () => {
-      this._handleDeleteCardClick({_id: this._cardOwnerId});
+      this._handleDeleteCardClick(this);
     });
 
     this._cardImage.addEventListener("click", () => {

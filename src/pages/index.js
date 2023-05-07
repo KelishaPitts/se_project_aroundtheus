@@ -35,15 +35,13 @@ api.getUserAvatar().then(userData =>{
   profileUserInput.setAvatar(userData.avatar)
 })
 
-
-
 api.getUserInfo().then(userData => {
   profileUserInput.setUserInfo(
     userData.name,userData.about
   )
 });
 
-function getUserId(){
+async function getUserId(){
 api.getUserInfo().then(userData => {
   console.log(userData._id)
   const userId = userData._id;
@@ -148,10 +146,14 @@ const cardPopupPrev = new PopupWithImage({ popupSelector: "#image-display" });
 
 
 function createCard(data) {
-  const cardElement = new Card({
-      data:{link: data.link, userId: getUserId() , name:data.name, id: data._id, likes:data.likes,cardOwnerId: data.owner._id},
+  console.log(data.owner)
+  const cardElement = new Card({ 
+      data:{link: data.link, name: data.name, id: data._id, likes: data.likes, cardOwnerId: data.owner._id},
+      userId:"fd5dff77ef1e17e6a6900434"
+  ,
      
       handleCardClick: (imageData) => {
+        console.log(data._id)
         cardPopupPrev.open(imageData);
       },
 
@@ -173,20 +175,18 @@ function createCard(data) {
       })
       },
       handleCardLikes:(card)=>{
-        console.log(card.userId)
+        console.log(card._id)
         if (!card.isCardLiked()){
           api.addLike(card._id).then((res)=>{
             card.updateLikes(res.likes)
+            console.log(res.likes)
           })
         }else{ 
           api.removeLike(card._id).then((res)=>{
             card.updateLikes(res.likes)
           })
         }
-      
-       
      }
-
 
     },
     
@@ -199,12 +199,12 @@ return cardElement
 const cardSection = new Section({
   
   renderer: (data) => { 
-  api.addCard(data).then(data => {
-  const cardElement = createCard(data)
+  //   api.addCard(data).then(data => {
+  //     const cardElement = createCard(data)
   
-  cardSection.addItem(cardElement)})
+  // cardSection.addItem(cardElement)})
 
-
+  cardSection.addItem(createCard(data))
   },
     containerSelector: selectors.cardSection,
 })

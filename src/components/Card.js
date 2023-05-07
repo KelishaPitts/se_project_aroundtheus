@@ -1,7 +1,7 @@
 export default class Card {
-  constructor({data, handleCardClick, handleDeleteCardClick,handleCardLikes }, cardSelector) {
+  constructor({data, userId, handleCardClick, handleDeleteCardClick, handleCardLikes }, cardSelector) {
     this._name = data.name;
-    this._userId = data.userId;
+    this._userId = userId;
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._id = data.id;
@@ -67,6 +67,17 @@ updateLikes(likes){
 
  }
 
+ fillInLike(){
+  if(this.isCardLiked()){
+    this._cardLikeButton.classList.add("card__button-like_liked")
+  }
+else{
+  this._cardLikeButton.classList.remove("card__button-like_liked")
+
+}
+ }
+
+
   _likeCard() {  
   this._cardLikeButton.classList.toggle("card__button-like_liked");
 }
@@ -86,8 +97,13 @@ updateLikes(likes){
     this._cardImage.src = this._link;
     this._cardImage.alt = `Photo of ${this._name}`;
     this._cardElement.querySelector(".card__title").textContent = this._name;
+    this.fillInLike();
     this.showLikes();
-    //this._canDelete();
+    this._canDelete();
     return this._cardElement;
   } 
 }
+
+
+
+

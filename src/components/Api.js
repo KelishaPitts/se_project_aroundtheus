@@ -21,11 +21,6 @@ class Api {
         console.log(err); // log the error to the console
       });
   }
-  //async loadCards(){
-    //return await Promise.all([getInitialCards,getUserInfo, getUserAvatar,addLike,removeLike]);
-  //}
-
-
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: {

@@ -19,8 +19,11 @@ class PopupWithForm extends Popup {
     setTimeout(this.Saving(), 5000);
   }
 
-  endLoading(){
-    this._button.textContent = this._button.name;
+  endLoading(text){
+    this._button.textContent = text;
+  }
+  createEndLoading(){
+    this._button.textContent = "Create";
   }
 
   Saving() {

@@ -15,6 +15,10 @@ export default class Popup {
       this.close();
     }
   };
+  submitAction(action){
+    this._handleFormSubmit = action;
+  }
+
   setEventListeners() {
     
 

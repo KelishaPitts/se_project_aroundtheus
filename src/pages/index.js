@@ -19,7 +19,7 @@ import {
 } from "../utils/constants.js";
 import PopupWithConfirm from "../components/PopupWithConfirm";
 logoImg.src = logo;
-avatarImg.src = avatar;
+//avatarImg.src = avatar;
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
@@ -41,14 +41,8 @@ api.getUserInfo().then(userData => {
   )
 });
 
-async function getUserId(){
-api.getUserInfo().then(userData => {
-  console.log(userData._id)
-  const userId = userData._id;
-  return userId
-})
-}
-console.log(getUserId());
+
+
 
 function handleAvatarFormSubmit(data){
   changeAvatarPopup.onLoading()
@@ -61,7 +55,7 @@ function handleAvatarFormSubmit(data){
   console.log(err);
 }).finally(()=>{
   //loadImage(data.imageURL);
-  changeAvatarPopup.endLoading();
+  changeAvatarPopup.endLoading("Save");
 })
 }
   
@@ -79,7 +73,7 @@ function handleProfileFormSubmit(data) {
   }).catch((err)=>{
     console.log(err);
   }).finally(()=>{
-    profileFormPopup.endLoading();
+    profileFormPopup.endLoading("Save");
   })
 }
 
@@ -88,15 +82,18 @@ function handleCardFormSubmit(data) {
  placeFormPopup.onLoading();
   const cardName = data.title; 
   const urlLink = data.imageURL; 
+
   createNewCard({name: cardName, link: urlLink});
+
   placeFormPopup.close();
   
+
 }
 
 //Create new card from input
 
 function createNewCard(data) {
-  placeFormPopup.endLoading();
+  
   return cardSection.renderer(data);
 }
 
@@ -111,7 +108,9 @@ jobInput.value = userData.job;
 });
 addCardButton.addEventListener("click", () => {
   placeFormPopup.open();
+  //placeFormPopup.createEndLoading("Create")
   addCardFormValidator.disableButton();
+  
   
 });
 
@@ -145,12 +144,15 @@ const profileFormPopup = new PopupWithForm(
 const cardPopupPrev = new PopupWithImage({ popupSelector: "#image-display" });
 
 
+
+
 function createCard(data) {
+/*  api.getUserInfo().then(userData => {
+    console.log(userData._id)
+     const userId = userData._id;*/
   console.log(data.owner)
   const cardElement = new Card({ 
-      data:{link: data.link, name: data.name, id: data._id, likes: data.likes, cardOwnerId: data.owner._id},
-      userId:"fd5dff77ef1e17e6a6900434"
-  ,
+    data:{link: data.link, name:data.name, id: data._id, likes:data.likes,cardOwnerId: data.owner._id},userId: "fd5dff77ef1e17e6a6900434",
      
       handleCardClick: (imageData) => {
         console.log(data._id)
@@ -192,18 +194,15 @@ function createCard(data) {
     
     selectors.cardTemplate
   ).generateCard();
+  
 return cardElement
-}
+}//)}
 
 
-const cardSection = new Section({
-  
-  renderer: (data) => { 
-  //   api.addCard(data).then(data => {
-  //     const cardElement = createCard(data)
-  
-  // cardSection.addItem(cardElement)})
 
+
+const cardSection = new Section({  
+  renderer: (data) => {  
   cardSection.addItem(createCard(data))
   },
     containerSelector: selectors.cardSection,

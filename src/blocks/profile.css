@@ -81,13 +81,6 @@
     border-radius: 60%;
 }
 
-
-
-.profile__button-edit:hover {
-    opacity: 0.6;
-
-}
-
 .profile__title {
     max-width: 373px;
     font-family: 'Inter', 'Arial', sans-serif;

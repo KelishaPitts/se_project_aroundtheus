@@ -1,4 +1,4 @@
-# Project 7: Around The U.S.
+# Project 9: Around The U.S.
 
 # Function
 Responsive Image gallery with mobile and tablet versions.
@@ -17,6 +17,8 @@ Javascript, flexboxes and grids.
 # Updates
 Refactored Code to add Classes and Modules.
 Added in Webpack 
+Add Api
+Cards are no longer hard coded in
 
 # Git Pages
 https://kelishapitts.github.io/se_project_aroundtheus/

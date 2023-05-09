@@ -1,11 +1,14 @@
 {
-  "name": "practicum",
+  "name": "project9",
   "version": "0.0.1",
-  "description": "Educational platform",
+  "repository": {"url": "git+https://github.com/KelishaPitts/se_project_aroundtheus.git"},
+  "description": "Photoapp",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Kelisha Pitts",
@@ -18,6 +21,7 @@
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "6.7.1",
     "cssnano": "5.1.12",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "2.6.1",
     "postcss-loader": "7.0.1",

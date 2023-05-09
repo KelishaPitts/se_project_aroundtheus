@@ -69,7 +69,7 @@
     right: 110%;
 
 }
-.modal__button-submit_type_confirm{
+.modal__button-confirm{
     background-color: #000000;
     color: #FFFFFF;
     justify-items: center;
@@ -147,7 +147,7 @@
 
     }
 
-    .modal__button-submit_type_confirm{
+    .modal__button-confirm{
         width: 238px;
         height: 46px;
         margin-bottom: 25px;

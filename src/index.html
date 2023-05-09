@@ -40,7 +40,7 @@
                                                         maxlength="200" required>
                                                  <span class="form__error aboutMe-error"></span>
                                           </label>
-                                          <button class="modal__button-submit" type="submit" name="Save" > Save</button>
+                                          <button class="modal__button-submit" type="submit" name="Save"> Save</button>
                                    </fieldset>
                             </form>
                      </section>
@@ -61,16 +61,18 @@
 
                                                  <span class="form__error imageURL-error"></span>
                                           </label>
-                                          <button class="modal__button-submit" type="submit" name="Create"> Create</button>
+                                          <button class="modal__button-submit" type="submit" name="Create">
+                                                 Create</button>
                                    </fieldset>
                             </form>
                      </section>
                      <section class="modal" id="confirm-popup">
                             <form class="form modal__container">
-                                   <button type="button" class="modal__button-close" > </button>
+                                   <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
-                                   <h2 class="form__title_type_confirm">Are You Sure?</h2>
-                                   <button class="modal__button-submit_type_confirm" id="delete-confirm-button">Yes</button>
+                                          <h2 class="form__title_type_confirm">Are You Sure?</h2>
+                                          <button class="modal__button-submit_type_confirm"
+                                                 id="delete-confirm-button">Yes</button>
                                    </fieldset>
                             </form>
 
@@ -80,71 +82,70 @@
                             <form class="form modal__container" novalidate>
                                    <button type="button" class="modal__button-close"> </button>
                                    <fieldset class="form__fieldset">
-                                   <h2 class="form__title ">Change profile picture</h2>
-                                   <label class="form__label" for="imageURL">
-                                          <input class="form__input form__input_type_imageURL" type="url"
-                                                 id="imageURL" name="imageURL" placeholder="Image URL" required>
-                                   <span class="form__error imageURL-error"></span>
-                                   </label>
-                                   <button class="modal__button-submit " type="submit" name="Save">Save</button>
+                                          <h2 class="form__title ">Change profile picture</h2>
+                                          <label class="form__label" for="imageURL">
+                                                 <input class="form__input form__input_type_imageURL" type="url"
+                                                        id="imageURL" name="imageURL" placeholder="Image URL" required>
+                                                 <span class="form__error imageURL-error"></span>
+                                          </label>
+                                          <button class="modal__button-submit " type="submit" name="Save">Save</button>
                                    </fieldset>
-                            </div>
-
-                     </section>
-
-
-
-                     <section class="modal" id="image-display">
-                            <div class="modal__image-container">
-                                   <button type="button" class="modal__button-close" id="modal-image-close"> </button>
-                                   <img class="modal__image" src="#" alt="">
-                                   <p class="modal__image-text"></p>
-
-                            </div>
-                     </section>
-
-
-                     <section class="profile">
-                            <div class="profile__avatar-container">
-                            <button class="profile__button-avatar" type="button"></button>
-                            <img class="profile__image"  alt="profile-avatar">
-                            </div>
-                            <div class=" profile__heading">
-                                   <h1 class="profile__title">Jacques Cousteau</h1>
-                                   <button class="profile__button-edit" type="button" value="edit-button"
-                                          aria-label="edit-button"></button>
-                            </div>
-                            <button class="profile__button-add" type="button" value="add-button"
-                                   aria-label="add-button"></button>
-                            <p class="profile__subtitle">Explorer</p>
-                     </section>
-
-                     <section class="gallery">
-                            <ul class="gallery__cards">
-                                   <template id="card">
-                                          <li class="card">
-                                                 <button class="card__button-delete" type="button" value="delete-button"
-                                                        aria-label="delete-button"></button>
-                                                 <img class="card__image" src="#" alt="">
-                                                 <div class="card__description">
-                                                        <h2 class="card__title"></h2>
-                                                        <div class="card__like-container">
-                                                        <button class="card__button-like" type="button"
-                                                               value="like-button" aria-label="like-button"></button>
-                                                               <p class="card__like-counter"></p>
-                                                        </div>
-                                                 </div>
-                                          </li>
-
-                                   </template>
-                            </ul>
-                     </section>
-              </main>
-              <footer class="footer">
-                     <p class="footer__copywrite">&copy; 2022 Around The U.S.</p>
-              </footer>
        </div>
-      
+
+       </section>
+
+
+
+       <section class="modal" id="image-display">
+              <div class="modal__image-container">
+                     <button type="button" class="modal__button-close" id="modal-image-close"> </button>
+                     <img class="modal__image" src="#" alt="">
+                     <p class="modal__image-text"></p>
+
+              </div>
+       </section>
+
+
+       <section class="profile">
+              <div class="profile__avatar-container">
+                     <button class="profile__button-avatar" type="button"></button>
+                     <img class="profile__image" alt="profile-avatar">
+              </div>
+              <div class=" profile__heading">
+                     <h1 class="profile__title">Jacques Cousteau</h1>
+                     <button class="profile__button-edit" type="button" value="edit-button"
+                            aria-label="edit-button"></button>
+              </div>
+              <button class="profile__button-add" type="button" value="add-button" aria-label="add-button"></button>
+              <p class="profile__subtitle">Explorer</p>
+       </section>
+
+       <section class="gallery">
+              <ul class="gallery__cards">
+                     <template id="card">
+                            <li class="card">
+                                   <button class="card__button-delete" type="button" value="delete-button"
+                                          aria-label="delete-button"></button>
+                                   <img class="card__image" src="#" alt="">
+                                   <div class="card__description">
+                                          <h2 class="card__title"></h2>
+                                          <div class="card__like-container">
+                                                 <button class="card__button-like" type="button" value="like-button"
+                                                        aria-label="like-button"></button>
+                                                 <p class="card__like-counter"></p>
+                                          </div>
+                                   </div>
+                            </li>
+
+                     </template>
+              </ul>
+       </section>
+       </main>
+       <footer class="footer">
+              <p class="footer__copywrite">&copy; 2022 Around The U.S.</p>
+       </footer>
+       </div>
+
 </body>
 
 </html>

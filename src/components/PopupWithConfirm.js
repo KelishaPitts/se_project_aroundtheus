@@ -5,16 +5,13 @@ class PopupWithConfirm extends Popup {
     this._popupForm = this._popupElement.querySelector(".modal__container");
   }
 
-setEventListeners(){
+  setEventListeners() {
     super.setEventListeners();
-    this._popupForm.addEventListener("submit", (evt)=>{
-        evt.preventDefault();
-        this._handleFormSubmit();
-
-    })
-}
-
-
+    this._popupForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      this._handleFormSubmit();
+    });
+  }
 }
 
 export default PopupWithConfirm;

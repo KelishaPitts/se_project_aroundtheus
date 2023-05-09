@@ -19,10 +19,12 @@ class PopupWithForm extends Popup {
     setTimeout(this.Saving(), 5000);
   }
 
-  endLoading(text){
+  endLoading(text) {
+    this._button = this._popupElement.querySelector(".modal__button-submit");
     this._button.textContent = text;
   }
-  createEndLoading(){
+  createEndLoading() {
+    this._button = this._popupElement.querySelector(".modal__button-submit");
     this._button.textContent = "Create";
   }
 
@@ -33,7 +35,7 @@ class PopupWithForm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    
+
     this._popupForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._handleFormSubmit(this._getInputValues());

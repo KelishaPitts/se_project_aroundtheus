@@ -15,20 +15,17 @@ export default class Popup {
       this.close();
     }
   };
-  submitAction(action){
+  submitAction(action) {
     this._handleFormSubmit = action;
   }
 
   setEventListeners() {
-    
-
     this._popupElement.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("modal_opened")) {
         this.close();
       }
       if (evt.target.classList.contains("modal__button-close")) {
         this.close();
-      
       }
     });
   }

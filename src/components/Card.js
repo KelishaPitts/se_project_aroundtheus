@@ -1,7 +1,7 @@
 export default class Card {
-  constructor({data, handleCardClick, handleDeleteCardClick, handleCardLikes }, cardSelector) {
+  constructor({data,userId, handleCardClick, handleDeleteCardClick, handleCardLikes }, cardSelector) {
     this._name = data.name;
-    this._userId = data.userId;
+    this._userId = userId;
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._id = data.id;
@@ -14,9 +14,10 @@ export default class Card {
     
   }
   getId(){
-    
     return this._id;
   }
+  
+
 
 
   isCardLiked(){
@@ -61,10 +62,9 @@ updateLikes(likes){
   }
 
  _canDelete(){
-  if (this._userId !== this._cardOwnerId){
+  if (this._userId != this._cardOwnerId){
     this._cardDeleteButton.remove();
   }
-
  }
 
  fillInLike(){

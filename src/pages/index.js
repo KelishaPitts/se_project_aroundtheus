@@ -26,21 +26,32 @@ const api = new Api({
   authToken: "559236c5-e398-4cbd-81f5-03b6a4d1ff9c"
 }); 
 
-api.getInitialCards()
+
+const initialCards = api.getInitialCards()
 .then(cards => {
-  cardSection.renderItems(cards);
+  return cards;
 });
 
+ const userData = api.getUserInfo().then(userData => {
+  return userData;
+ })
+
+
+/*
 api.getUserAvatar().then(userData =>{
   profileUserInput.setAvatar(userData.avatar)
 })
-
-api.getUserInfo().then(userData => {
+ 
+ api.getUserInfo().then(userData => {
   profileUserInput.setUserInfo(
     userData.name,userData.about
   )
 });
 
+api.getUserInfo().then(userData => {
+  profileUserInput.setUserId(userData)
+})
+*/
 
 
 
@@ -83,19 +94,20 @@ function handleCardFormSubmit(data) {
   const cardName = data.title; 
   const urlLink = data.imageURL; 
 
-  createNewCard({name: cardName, link: urlLink});
+  createNewCard({name: cardName, link: urlLink });
 
   placeFormPopup.close();
   
 
 }
 
-//Create new card from input
 
 function createNewCard(data) {
+  api.addCard(data).then((newCard) =>{
   
-  return cardSection.renderer(data);
+  return cardSection.renderer(newCard);
 }
+)}
 
 editProfileButton.addEventListener("click", () => {
 profileFormPopup.open();
@@ -145,17 +157,15 @@ const cardPopupPrev = new PopupWithImage({ popupSelector: "#image-display" });
 
 
 
-
 function createCard(data) {
-/*  api.getUserInfo().then(userData => {
-    console.log(userData._id)
-     const userId = userData._id;*/
-  console.log(data.owner)
-  const cardElement = new Card({ 
-    data:{link: data.link, name:data.name, id: data._id, likes:data.likes,cardOwnerId: data.owner._id},userId: "fd5dff77ef1e17e6a6900434",
-     
+  debugger
+  const cardElement = new Card({
+
+      data:{link: data.link, name:data.name, id: data._id, likes:data.likes,cardOwnerId: data.owner._id}, 
+      userId: data.userId,
+    
       handleCardClick: (imageData) => {
-        console.log(data._id)
+        console.log(data.link)
         cardPopupPrev.open(imageData);
       },
 
@@ -167,7 +177,7 @@ function createCard(data) {
           console.log(data)
           const id = card.getId();
         api.deleteCard(id).then((data)=>{
-          
+
           console.log(data)
           card.handleDeleteCard();
           confirmationPopup.close();
@@ -177,35 +187,48 @@ function createCard(data) {
       })
       },
       handleCardLikes:(card)=>{
-        console.log(card._id)
+        
         if (!card.isCardLiked()){
+          console.log(card)
           api.addLike(card._id).then((res)=>{
             card.updateLikes(res.likes)
-            console.log(res.likes)
           })
         }else{ 
           api.removeLike(card._id).then((res)=>{
             card.updateLikes(res.likes)
           })
         }
+
+
      }
-
+   
     },
-    
-    selectors.cardTemplate
-  ).generateCard();
   
-return cardElement
-}//)}
+      selectors.cardTemplate
+    ).generateCard();
+  
+  return cardElement
+  }
+  
 
+let cardSection;
+let userId;
+api.getAppInfo().then(([initialCards, userData])=>{
+  debugger
+userId = userData._id;
+profileUserInput.setAvatar(userData.avatar);
+profileUserInput.setUserInfo(userData.name, userData.about);
 
-
-
-const cardSection = new Section({  
-  renderer: (data) => {  
-  cardSection.addItem(createCard(data))
+  cardSection = new Section({  
+  
+  renderer: (initialCards) => {  
+  
+  cardSection.addItem(createCard(initialCards))
   },
     containerSelector: selectors.cardSection,
+})
+cardSection.renderItems(initialCards);
+
 })
 
 cardPopupPrev.setEventListeners();

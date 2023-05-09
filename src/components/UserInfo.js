@@ -14,7 +14,6 @@ class UserInfo {
     this._profileAvatar.src = link;
   }
 
-
   getUserInfo() {
     const userData = {};
     userData.name = this._profileName.textContent;

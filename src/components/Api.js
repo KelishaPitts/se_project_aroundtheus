@@ -191,6 +191,11 @@ updateAvatar(url){
   });
 }
 
+
+getAppInfo() {
+  return Promise.all([this.getInitialCards(), this.getUserInfo()]);
+ }
+
 }
 
 

@@ -6,7 +6,7 @@ class UserInfo {
   }
 
   getAvatar(){
-    return this._profileAvatar;
+    this._profileAvatar;
   }
 
   setAvatar(link){
@@ -18,7 +18,6 @@ class UserInfo {
     const userData = {};
     userData.name = this._profileName.textContent;
     userData.job = this._profileDescription.textContent;
-    userData.avatar = this._profileAvatar.src;
     return userData;  // here you return the collected data
   }
 

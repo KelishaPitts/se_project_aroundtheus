@@ -15,10 +15,7 @@ export default class Popup {
       this.close();
     }
   };
-  submitAction(action) {
-    this._handleFormSubmit = action;
-  }
-
+ 
   setEventListeners() {
     this._popupElement.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("modal_opened")) {

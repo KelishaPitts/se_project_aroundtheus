@@ -34,11 +34,13 @@ const cardList = document.querySelector(".gallery__cards");
 
   };
 
+  const loadingButtonText = "Saving";
+
   const userInfoSelectors ={
     userNameSelector:".profile__title",
     userJobSelector: ".profile__subtitle",
     userAvatarSelector:".profile__image"
   };
 
-  export {editProfileButton,editProfilePopUp,addPlacePopUp,imagePopUp,addCardButton,nameInput,jobInput,changeAvatarPopup ,cardTitleInput,avatarForm,changeAvatarButton,
+  export {loadingButtonText,editProfileButton,editProfilePopUp,addPlacePopUp,imagePopUp,addCardButton,nameInput,jobInput,changeAvatarPopup ,cardTitleInput,avatarForm,changeAvatarButton,
          placeUrlInput,cardForm,profileForm,cardList, profileDescription,profileName,logoImg,avatarImg,formValidatorConfig, selectors,userInfoSelectors};

@@ -20,6 +20,5 @@ Added in Webpack
 Add Api
 Cards are no longer hard coded in
 
-# Git Pages
-https://kelishapitts.github.io/se_project_aroundtheus/
+
 

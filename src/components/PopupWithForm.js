@@ -1,36 +1,29 @@
 import Popup from "./Popup.js";
+
 class PopupWithForm extends Popup {
-  constructor({ popupSelector }, handleFormSubmit) {
+  constructor({ popupSelector },{loadingButtonText}, handleFormSubmit) {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector(".modal__container");
     this._handleFormSubmit = handleFormSubmit;
+    this._submitButton =  this._popupElement.querySelector(".modal__button-submit");
+    this._loadingButtonText = loadingButtonText;
+    this._buttonText = this._submitButton.textContent
   }
 
   _getInputValues() {
-    this._inputList = this._popupForm.querySelectorAll(".form__input");
+    const inputList = this._popupForm.querySelectorAll(".form__input");
     const inputInfoElement = {};
-    this._inputList.forEach((input) => {
+    inputList.forEach((input) => {
       inputInfoElement[input.name] = input.value;
     });
     return inputInfoElement;
   }
-
-  onLoading() {
-    setTimeout(this.Saving(), 5000);
+  hideLoading() {
+    this._submitButton.textContent = this._buttonText;
   }
 
-  endLoading(text) {
-    this._button = this._popupElement.querySelector(".modal__button-submit");
-    this._button.textContent = text;
-  }
-  createEndLoading() {
-    this._button = this._popupElement.querySelector(".modal__button-submit");
-    this._button.textContent = "Create";
-  }
-
-  Saving() {
-    this._button = this._popupElement.querySelector(".modal__button-submit");
-    this._button.textContent = "Saving...";
+  showLoading() {
+    this._submitButton.textContent = this._loadingButtonText;
   }
 
   setEventListeners() {

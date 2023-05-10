@@ -1,7 +1,9 @@
 {
   "name": "project9",
   "version": "0.0.1",
-  "repository": {"url": "git+https://github.com/KelishaPitts/se_project_aroundtheus.git"},
+  "repository": {
+    "url": "git+https://github.com/KelishaPitts/se_project_aroundtheus.git"
+  },
   "description": "Photoapp",
   "main": "index.js",
   "scripts": {

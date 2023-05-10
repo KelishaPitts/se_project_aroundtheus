@@ -1,14 +1,16 @@
 import Popup from "./Popup.js";
 class PopupWithConfirm extends Popup {
-  constructor({ popupSelector },{loadingButtonText}) {
+  constructor({ popupSelector }, { loadingButtonText }) {
     super({ popupSelector });
     this._popupForm = this._popupElement.querySelector(".modal__container");
-    this._submitButton= this._popupElement.querySelector(".modal__button-confirm");
+    this._submitButton = this._popupElement.querySelector(
+      ".modal__button-confirm"
+    );
     this._loadingButtonText = loadingButtonText;
     this._buttonText = this._submitButton.textContent;
   }
 
-  submitAction(action) {
+  setSubmitAction(action) {
     this._handleFormSubmit = action;
   }
 
@@ -17,7 +19,6 @@ class PopupWithConfirm extends Popup {
   }
 
   showLoading() {
-    debugger
     this._submitButton.textContent = this._loadingButtonText;
   }
 

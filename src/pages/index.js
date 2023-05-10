@@ -30,8 +30,10 @@ logoImg.src = logo;
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
-  headers: { authorization: "559236c5-e398-4cbd-81f5-03b6a4d1ff9c",
-  "Content-Type": "application/json" },
+  headers: {
+    authorization: "559236c5-e398-4cbd-81f5-03b6a4d1ff9c",
+    "Content-Type": "application/json",
+  },
 });
 function handleAvatarFormSubmit(data) {
   changeAvatarPopup.showLoading();
@@ -39,7 +41,6 @@ function handleAvatarFormSubmit(data) {
   api
     .updateAvatar(data.imageURL)
     .then(() => {
-      console.log(profileUserInput.getAvatar());
       profileUserInput.setAvatar(data.imageURL);
       changeAvatarPopup.close();
     })
@@ -54,7 +55,6 @@ function handleAvatarFormSubmit(data) {
 
 // Submit changes to Profile Form
 function handleProfileFormSubmit(data) {
-  console.log(data);
   profileFormPopup.showLoading();
   api
     .editProfile({ name: data.fullname, about: data.aboutMe })
@@ -89,6 +89,9 @@ function createNewCard(data) {
       placeFormPopup.close();
       return cardSection.addItem(createCard(newCard));
     })
+    .catch((err) => {
+      console.log(err);
+    })
     .finally(() => {
       placeFormPopup.hideLoading();
     });
@@ -120,25 +123,28 @@ const profileUserInput = new UserInfo(
 
 const changeAvatarPopup = new PopupWithForm(
   { popupSelector: "#change-avatar" },
-  {loadingButtonText: "Saving..."},
+  { loadingButtonText: "Saving..." },
 
   handleAvatarFormSubmit
 );
 
-const confirmationPopup = new PopupWithConfirm({
-  popupSelector: "#confirm-popup",
-}, {loadingButtonText: "Saving..."});
+const confirmationPopup = new PopupWithConfirm(
+  {
+    popupSelector: "#confirm-popup",
+  },
+  { loadingButtonText: "Deleting.." }
+);
 
 const placeFormPopup = new PopupWithForm(
   { popupSelector: "#add-place-form" },
-  {loadingButtonText: "Saving..."},
+  { loadingButtonText: "Saving..." },
 
   handleCardFormSubmit
 );
 
 const profileFormPopup = new PopupWithForm(
   { popupSelector: "#edit-profile-form" },
-  {loadingButtonText: "Saving..."},
+  { loadingButtonText: "Saving..." },
 
   handleProfileFormSubmit
 );
@@ -164,7 +170,7 @@ function createCard(data) {
 
       handleDeleteCardClick: (card) => {
         confirmationPopup.open();
-        confirmationPopup.submitAction(() => {
+        confirmationPopup.setSubmitAction(() => {
           const id = card.getId();
           confirmationPopup.showLoading();
           api
@@ -175,22 +181,31 @@ function createCard(data) {
             })
             .catch((err) => {
               console.log(err);
-            }).finally(()=>{
-
-          confirmationPopup.hideLoading();
+            })
+            .finally(() => {
+              confirmationPopup.hideLoading();
+            });
         });
-      })},
+      },
       handleCardLikes: (card) => {
         if (!card.isCardLiked()) {
-          api.addLike(card._id).then((res) => {
-            card.updateLikes(res.likes);
-          }).catch((err) => {
-            console.log(err)})
+          api
+            .addLike(card._id)
+            .then((res) => {
+              card.updateLikes(res.likes);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         } else {
-          api.removeLike(card._id).then((res) => {
-            card.updateLikes(res.likes);
-          }).catch((err) => {
-            console.log(err)})
+          api
+            .removeLike(card._id)
+            .then((res) => {
+              card.updateLikes(res.likes);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }
       },
     },
@@ -203,20 +218,24 @@ function createCard(data) {
 
 let cardSection;
 let userId;
-api.getAppInfo().then(([card, userData]) => {
-  userId = userData._id;
-  profileUserInput.setAvatar(userData.avatar);
-  profileUserInput.setUserInfo(userData.name, userData.about);
+api
+  .getAppInfo()
+  .then(([card, userData]) => {
+    userId = userData._id;
+    profileUserInput.setAvatar(userData.avatar);
+    profileUserInput.setUserInfo(userData.name, userData.about);
 
-  cardSection = new Section({
-    renderer: (card) => {
-      cardSection.addItem(createCard(card));
-    },
-    containerSelector: selectors.cardSection,
+    cardSection = new Section({
+      renderer: (card) => {
+        cardSection.addItem(createCard(card));
+      },
+      containerSelector: selectors.cardSection,
+    });
+    cardSection.renderItems(card);
+  })
+  .catch((err) => {
+    console.log(err);
   });
-  cardSection.renderItems(card);
-}).catch((err) => {
-  console.log(err)})
 
 cardPopupPrev.setEventListeners();
 placeFormPopup.setEventListeners();

@@ -28,9 +28,8 @@ export default class Card {
   }
 
   renderLikes() {
-    this._cardCounter.textContent =
-      this._likes.length;
-        this.toggleLikeButton()
+    this._cardCounter.textContent = this._likes.length;
+    this.toggleLikeButton();
   }
 
   _setEventListeners() {
@@ -87,7 +86,7 @@ export default class Card {
     this._setEventListeners();
     this._cardImage.src = this._link;
     this._cardImage.alt = `Photo of ${this._name}`;
-    this._cardCounter = this._cardElement.querySelector(".card__like-counter")
+    this._cardCounter = this._cardElement.querySelector(".card__like-counter");
     this._cardElement.querySelector(".card__title").textContent = this._name;
     this.renderLikes();
     this._hideTrashButton();

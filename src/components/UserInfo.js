@@ -1,16 +1,15 @@
 class UserInfo {
-  constructor(userNameSelector, userJobSelector,userAvatarSelector) {
+  constructor(userNameSelector, userJobSelector, userAvatarSelector) {
     this._profileName = document.querySelector(userNameSelector);
     this._profileDescription = document.querySelector(userJobSelector);
-    this._profileAvatar= document.querySelector(userAvatarSelector);
+    this._profileAvatar = document.querySelector(userAvatarSelector);
   }
 
-  getAvatar(){
-    this._profileAvatar;
+  getAvatar() {
+    return this._profileAvatar.src;
   }
 
-  setAvatar(link){
-    console.log(link);
+  setAvatar(link) {
     this._profileAvatar.src = link;
   }
 
@@ -18,13 +17,12 @@ class UserInfo {
     const userData = {};
     userData.name = this._profileName.textContent;
     userData.job = this._profileDescription.textContent;
-    return userData;  // here you return the collected data
+    return userData; // here you return the collected data
   }
 
-  setUserInfo(name,job) {
+  setUserInfo(name, job) {
     this._profileName.textContent = name;
     this._profileDescription.textContent = job;
-
   }
 }
 

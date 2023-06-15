@@ -3,6 +3,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
+
 
 module.exports = {
   devtool: "inline-source-map",
@@ -60,11 +63,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv({path: '.env'}),
     new HtmlWebpackPlugin({
       template: "src/index.html", // path to our index.html file
       favicon: "src/favicon.ico"
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(), // connect the plugin for merging CSS files
+    new NodePolyfillPlugin(),
   ],
 };

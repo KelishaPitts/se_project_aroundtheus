@@ -1,3 +1,5 @@
+require('dotenv').config({ path: require('../../.env')('.env')});
+
 import "../pages/index.css";
 import logo from "../images/Logo-white.svg";
 import {
@@ -16,6 +18,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../utils/Api";
+
 import {
   editProfileButton,
   addCardButton,
@@ -26,12 +29,14 @@ import {
 } from "../utils/constants.js";
 import PopupWithConfirm from "../components/PopupWithConfirm";
 logoImg.src = logo;
+const apikey = process.env.API_KEY;
+console.log(process.env.API_KEY)
 //avatarImg.src = avatar;
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
   headers: {
-    authorization: "559236c5-e398-4cbd-81f5-03b6a4d1ff9c",
+    authorization: "~" ,
     "Content-Type": "application/json",
   },
 });

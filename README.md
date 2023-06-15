@@ -29,4 +29,4 @@ Button, logos, style brief, and Icons provided by Practicum Bootcamp.\
 https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4%3A-Around-The-U.S.-%2F-desktop-%2B-mobile?type=design&node-id=0-1&t=Wqu739SZ9BAKs3Ow-0
 
 ## Video
-https://github.com/KelishaPitts/se_project_aroundtheus/assets/37483347/2d4e8009-0271-4fe8-965d-f037a158cb46
+https://github.com/KelishaPitts/se_project_aroundtheus/assets/37483347/14bbc96d-a4ce-424a-ac29-2e65bbc58680

@@ -1,5 +1,3 @@
-require('dotenv').config({ path: require('../../.env')('.env')});
-
 import "../pages/index.css";
 import logo from "../images/Logo-white.svg";
 import {
@@ -29,8 +27,6 @@ import {
 } from "../utils/constants.js";
 import PopupWithConfirm from "../components/PopupWithConfirm";
 logoImg.src = logo;
-const apikey = process.env.API_KEY;
-console.log(process.env.API_KEY)
 //avatarImg.src = avatar;
 
 const api = new Api({
